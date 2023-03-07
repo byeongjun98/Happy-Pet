@@ -11,14 +11,17 @@
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Happy Pet"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:textColor="#ff0000"
+                android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,120 +48,241 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="350dp">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        android:layout_margin="15dp"
-                        android:background="@drawable/border_layout"
-                        android:padding="15dp">
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/chat"
-                            android:layout_alignParentRight="true"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_alignParentBottom="true">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="실시간 상담"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="전문 의료인 무료 답변"
-                                android:textColor="#D5D5D5"/>
-                        </LinearLayout>
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/border_bottom_layout"
+                    android:elevation="30dp"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_weight="1"
-                        android:layout_margin="15dp"
-                        android:background="@drawable/border_layout"
-                        android:padding="15dp">
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/noticeboard"
-                            android:layout_alignParentRight="true"
-                            android:background="@android:color/transparent"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_alignParentBottom="true">
-                            <TextView
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/border_layout_white">
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="종합 진료"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"/>
-                            <TextView
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:src="@drawable/brain" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="내과"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/border_layout_white">
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="전문 의료인 무료 답변"
-                                android:textColor="#D5D5D5"/>
-                        </LinearLayout>
-                    </RelativeLayout>
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:src="@drawable/brain" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="내과"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/border_layout_white">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:src="@drawable/brain" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="내과"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/border_layout_white">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginBottom="3dp"
+                                    android:src="@drawable/brain" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="내과"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
                     android:orientation="vertical">
-                    <LinearLayout
+
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="내과">
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="많이 바쁘시다면?"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
 
-                        </Button>
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="치과">
-
-                        </Button>
-                    </LinearLayout>
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="외과">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                        </Button>
-                        <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:text="안과">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="15dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_layout"
+                            android:padding="15dp">
 
-                        </Button>
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/chat" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="실시간 상담"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="전문 의료인 무료 답변"
+                                    android:textColor="#D5D5D5" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="15dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_layout"
+                            android:padding="15dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/noticeboard" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="종합 진료"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="전문 의료인 무료 답변"
+                                    android:textColor="#D5D5D5" />
+                            </LinearLayout>
+                        </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
+
             </RelativeLayout>
         </LinearLayout>
 
