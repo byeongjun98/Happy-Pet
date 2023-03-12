@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FragmentListDetail extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class FragmentListDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_list_detail);
+        ActionBar bar = getSupportActionBar();
+        bar.hide();
 
         symptomimage = findViewById(R.id.list_detail_image);
 
