@@ -1,3 +1,49 @@
 <resources>
-    <string name="app_name">Happy Pet</string>
+    <string name="app_name">asdf</string>
+
+    <string-array name="animal_name">
+        <item>개</item>
+        <item>개2</item>
+        <item>개3</item>
+    </string-array>
+
+    <string-array name="doctor_name">
+        <item>1경민</item>
+        <item>2경민</item>
+        <item>3경민</item>
+    </string-array>
+
+    <string-array name="hospital_name">
+        <item>한라1병원</item>
+        <item>한라2병원</item>
+        <item>한라3병원</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>2023-03-04 18:06</item>
+        <item>2023-03-04 18:32</item>
+        <item>2023-03-04 18:33</item>
+    </string-array>
+
+    <string-array name="symptom">
+        <item>모든 서류가 그렇듯이 환자가 내원하지 않은 상태에서 또는 환자를 진찰하지 않은 상태에서 쓴 모든 진단서는 불법이다.
+
+자신이 진찰한 소견에 대해 환자에게서 진단서 및 검안서 또는 증명서 교부를 요구받은 때에는 정당한 사유 없이 거부하지 못한다.2
+
+정당한 이유로 진단서 교부를 하지 않을 수 있는 상황으로는 본인 또는 적법한 대리인이 요구하는 것이 아닌 경우, 범죄에 이용될 것으로 의심되는 경우 등이다.
+
+그러면 응급실에서는 진단서를 왜 교부를 해 주지 않느냐라는 질문을 받을 수 있는데, 엄밀히 말하면 진단서를 작성하고 있다. 여기에는 사망진단서, 시체검안서 및 소견서가 있다.</item>
+        <item>폭행으로 인한 일반진단서나 상해진단서를 응급실에서 작성해주지 않는 경우가 많지만 환자가 정말 원한다면 진단서를 작성하면 된다.
+
+많은 병원에서 제증명 발급 절차 때문에 작성하지 않는 경우가 많다. 진단서의 변경은 불가능해서 그 당시의 상황에 대한 진단서는 재발급만 받을 수 있기 때문에 추후 외래 방문 시 추가로 다른 진단이 발견되더라도 중대한 합병증이 생기지 않는 질환이라면 추가 진단서를 받을 수 없으며 이는 당시 상황에 대한 피해 보상을 받지 못할 수 있으며, 어차피 새벽에 경찰서에 진단서를 제출해봐야 나중에 외래에서 받아서 제출하는 것과 행정 절차상의 차이도 없다. 추가 진단서가 발급되는 경우가 있다면 이에 대한 제증명 발급 수수료를 추가로 지불해야 한다.</item>
+        <item>이러한 이유로 일반진단서나 상해진단서를 원하는 경우 해당 임상과의 외래진료를 본 후(여러 과를 볼 수도 있음) 발급 받는 것이 일반적이며 보통 이렇게 하는 것이 여러모로 환자에게 유리하다고 설명하도록 한다.
+
+</item>
+    </string-array>
+
+    <string-array name="price">
+        <item>10000원</item>
+        <item>20000원</item>
+        <item>30000원</item>
+    </string-array>
 </resources>
