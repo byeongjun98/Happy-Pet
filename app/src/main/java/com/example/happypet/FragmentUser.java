@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,8 +20,8 @@ public class FragmentUser extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_user, container, false);
 
-        Button button = rootView.findViewById(R.id.onAdress);
-        button.setOnClickListener(new View.OnClickListener() {
+        LinearLayout adresslayout = rootView.findViewById(R.id.adressbutton);
+        adresslayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(),InAddressActivity.class);
@@ -28,16 +29,16 @@ public class FragmentUser extends Fragment {
             }
         });
 
-        Button button1 = rootView.findViewById(R.id.onCreadit);
-        button1.setOnClickListener(new View.OnClickListener() {
+        LinearLayout creaditlaydout = rootView.findViewById(R.id.creaditsetbutton);
+        creaditlaydout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(),IncreditActivity.class);
                 startActivity(intent);
             }
         });
-        Button button2 = rootView.findViewById(R.id.onMyInfo);
-        button2.setOnClickListener(new View.OnClickListener() {
+        LinearLayout myinfolayout = rootView.findViewById(R.id.myinfobutton);
+        myinfolayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getApplicationContext(),InmyInfoActivity.class);
