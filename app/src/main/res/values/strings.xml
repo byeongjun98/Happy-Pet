@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">asdf</string>
+    <string name="app_name">Happy Pet</string>
 
     <string-array name="animal_name">
         <item>개</item>
