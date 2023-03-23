@@ -10,5 +10,6 @@ public class write_review_Activity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.write_review);
+
     }
 }

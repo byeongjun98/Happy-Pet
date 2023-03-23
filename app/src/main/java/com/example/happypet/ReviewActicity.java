@@ -18,6 +18,7 @@ public class ReviewActicity extends Activity {
             public void onClick(View view) {
                 Intent intent= new Intent(getApplication().getApplicationContext(),write_review_Activity.class);
                 startActivity(intent);
+
             }
         });
     }
