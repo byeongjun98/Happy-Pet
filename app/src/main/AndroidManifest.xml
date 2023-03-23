@@ -32,6 +32,7 @@
         <activity android:name=".NoticeActivity" />
         <activity android:name=".ReviewActicity" />
         <activity android:name=".SettingActivity"/>
+        <activity android:name=".write_review_Activity"/>
     </application>
 
 </manifest>
