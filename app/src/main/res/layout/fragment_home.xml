@@ -2,297 +2,465 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:paddingBottom="50dp">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Happy Pet"
-                android:textSize="30dp"
-                android:textColor="#ff0000"
-                android:textStyle="bold"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="3dp">
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/alarm"
-                    android:scaleType="fitXY"
-                    android:background="@android:color/transparent"/>
-                <ImageButton
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="6dp"
-                    android:src="@drawable/user"
-                    android:scaleType="fitXY"
-                    android:background="@android:color/transparent"/>
-            </LinearLayout>
-        </RelativeLayout>
-
+        android:layout_height="match_parent"
+        android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/border_bottom_layout"
-                    android:elevation="30dp"
+                    android:layout_centerInParent="true"
+                    android:text="Happy Pet"
+                    android:textSize="30dp"
+                    android:textColor="#ff0000"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center">
-
-                        <RelativeLayout
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/border_layout_white">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:src="@drawable/brain" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:text="내과"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/border_layout_white">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:src="@drawable/brain" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:text="내과"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center">
-
-                        <RelativeLayout
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/border_layout_white">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:src="@drawable/brain" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:text="내과"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_margin="8dp"
-                            android:background="@drawable/border_layout_white">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="30dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:src="@drawable/brain" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:text="내과"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-                    </LinearLayout>
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="3dp">
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:src="@drawable/alarm"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"/>
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="6dp"
+                        android:src="@drawable/user"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"/>
                 </LinearLayout>
+            </RelativeLayout>
 
-                <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="350dp">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:text="많이 바쁘시다면?"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+                    android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/border_bottom_layout"
+                        android:elevation="30dp"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
 
-                        <RelativeLayout
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/border_layout_white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:src="@drawable/brain" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="내과"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/border_layout_white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:src="@drawable/brain" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="내과"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/border_layout_white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:src="@drawable/brain" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="내과"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/border_layout_white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:src="@drawable/brain" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="내과"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="많이 바쁘시다면?"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="15dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:layout_margin="15dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border_layout"
+                                android:padding="15dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/chat" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="실시간 상담"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="전문 의료인 무료 답변"
+                                        android:textColor="#D5D5D5" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:layout_margin="15dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/border_layout"
+                                android:padding="15dp">
+
+                                <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentRight="true"
+                                    android:background="@android:color/transparent"
+                                    android:src="@drawable/noticeboard" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="종합 진료"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="전문 의료인 무료 답변"
+                                        android:textColor="#D5D5D5" />
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="정보 공유"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/moreInfo"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:text="더보기 +" />
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/infoLayout1"
+                            android:orientation="vertical"
                             android:layout_weight="1"
-                            android:background="@drawable/border_layout"
-                            android:padding="15dp">
-
+                            android:padding="15dp"
+                            android:background="@drawable/border_layout_white">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ino1"
+                                android:visibility="gone"/>
                             <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:src="@drawable/chat" />
-
-                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:src="@drawable/brain"/>
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="실시간 상담"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="전문 의료인 무료 답변"
-                                    android:textColor="#D5D5D5" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="15dp"
+                                android:id="@+id/info_id1"
+                                android:text="id"
+                                android:textSize="15dp"
+                                android:layout_marginBottom="7dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_title1"
+                                android:text="title"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/infoLayout2"
+                            android:orientation="vertical"
                             android:layout_weight="1"
-                            android:background="@drawable/border_layout"
-                            android:padding="15dp">
-
+                            android:padding="15dp"
+                            android:background="@drawable/border_layout_white">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ino2"
+                                android:visibility="gone"/>
                             <ImageView
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_alignParentRight="true"
-                                android:background="@android:color/transparent"
-                                android:src="@drawable/noticeboard" />
-
-                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:src="@drawable/brain"/>
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="종합 진료"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="전문 의료인 무료 답변"
-                                    android:textColor="#D5D5D5" />
-                            </LinearLayout>
-                        </RelativeLayout>
+                                android:id="@+id/info_id2"
+                                android:text="id"
+                                android:textSize="15dp"
+                                android:layout_marginBottom="7dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_title2"
+                                android:text="title"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/infoLayout3"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:padding="15dp"
+                            android:background="@drawable/border_layout_white">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ino3"
+                                android:visibility="gone"/>
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:src="@drawable/brain"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_id3"
+                                android:text="id"
+                                android:textSize="15dp"
+                                android:layout_marginBottom="7dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_title3"
+                                android:text="title"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/infoLayout4"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:padding="15dp"
+                            android:background="@drawable/border_layout_white">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ino4"
+                                android:visibility="gone"/>
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:src="@drawable/brain"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_id4"
+                                android:text="id"
+                                android:textSize="15dp"
+                                android:layout_marginBottom="7dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/info_title4"
+                                android:text="title"
+                                android:textStyle="bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-
-            </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="정보 공유..           +더보기"/>
-        </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

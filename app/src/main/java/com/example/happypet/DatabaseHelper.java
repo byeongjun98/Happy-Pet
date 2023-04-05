@@ -7,11 +7,14 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper databaseHelper;
+    private SQLiteDatabase database;
+    private Context context;
     public static String NAME = "HappyPet.db";
     public static int VERSION = 1;
 
     private DatabaseHelper(Context context) {
         super(context, NAME, null, VERSION);
+        this.context = context;
     }
 
     public static DatabaseHelper getDatabaseHelper(Context context) {
@@ -26,20 +29,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         Log.d("database", "데이터베이스 생성");
 
-//        String todoList_create_sql = "create table if not exists todolist(" +
-//                " cnt integer PRIMARY KEY autoincrement, " +
-//                " title text, " +
-//                " mk_date timestamp default current_timestamp)";
+//        database = getDatabaseHelper(context).getWritableDatabase();
+
+        String user_create_sql = "create table if not exists user(" +
+                " id text PRIMARY KEY, " +
+                " pwd text, " +
+                " nickname text, " +
+                " email text, " +
+                " reg_date timestamp default current_timestamp)";
+
+        String information_create_sql = "create table if not exists information(" +
+                " ino integer PRIMARY KEY autoincrement, " +
+                " p_id text, " +
+                " title text, " +
+                " content text, " +
+                " mk_date timestamp default current_timestamp)";
+
+//        String insert_sql1 = "insert into " + "information"
+//                + "(p_id, title, content) "
+//                + " values "
+//                + " (aaaa, 캣타워가생겼어요, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
 //
-//        String todo_create_sql = "create table if not exists todo(" +
-//                " n_cnt integer PRIMARY KEY autoincrement, " +
-//                " p_cnt integer, " +
-//                " content text, " +
-//                " complete_yn text default  'n', " +
-//                " mk_date timestamp default current_timestamp)";
+//        String insert_sql2 = "insert into " + "information"
+//                + "(p_id, title, content) "
+//                + " values "
+//                + " (aaaa, 우리거북이가아파요, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
 //
-//        sqLiteDatabase.execSQL(todoList_create_sql);
-//        sqLiteDatabase.execSQL(todo_create_sql);
+//        String insert_sql3 = "insert into " + "information"
+//                + "(p_id, title, content) "
+//                + " values "
+//                + " (aaaa, ㅎㅎ, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
+//
+//        String insert_sql4 = "insert into " + "information"
+//                + "(p_id, title, content) "
+//                + " values "
+//                + " (aaaa, 강아지+고양이, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
+
+        sqLiteDatabase.execSQL(user_create_sql);
+        sqLiteDatabase.execSQL(information_create_sql);
+
+//        database.execSQL(insert_sql1);
+//        database.execSQL(insert_sql2);
+//        database.execSQL(insert_sql3);
+//        database.execSQL(insert_sql4);
+
         Log.d("database exec", "데이터베이스 실행");
     }
 

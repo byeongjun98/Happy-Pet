@@ -25,6 +25,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".InfoListActivity"></activity>
+        <activity android:name=".InfoDetailActivity"></activity>
+        <activity android:name=".InfoWriteActivity"></activity>
     </application>
 
 </manifest>
