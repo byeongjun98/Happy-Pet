@@ -25,9 +25,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".InfoListActivity"></activity>
-        <activity android:name=".InfoDetailActivity"></activity>
-        <activity android:name=".InfoWriteActivity"></activity>
+        <activity android:name=".InmyInfoActivity" />
+        <activity android:name=".IncreditActivity" />
+        <activity android:name=".InAddressActivity" />
+        <activity android:name=".NoticeActivity" />
+        <activity android:name=".ReviewActicity" />
+        <activity android:name=".SettingActivity"/>
     </application>
 
 </manifest>

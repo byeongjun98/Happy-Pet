@@ -1,19 +1,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
 
-    <TextView
-        android:id="@+id/textView_review_title"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="85dp"
-        android:layout_gravity="center"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:text="내 정보 관리"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_weight="1"
-        android:text="내 정보 관리"
-        android:textSize="25dp" />
+        >
 
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="이름을 입력하세요"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true"
 
+            />
 
+        <EditText
+            android:id="@+id/userphonenuber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="전화번호를 입력하세요"
+            android:inputType="phone"
+            android:selectAllOnFocus="true"
 
+            />
+
+        <EditText
+            android:id="@+id/userbirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="생년월일을 입력하세요"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true"
+
+            />
+        />
+</LinearLayout>
 </LinearLayout>
