@@ -13,6 +13,7 @@ public class InAddressActivity extends Activity {
         setContentView(R.layout.inmyadress);
 
         addAddressButton =findViewById(R.id.addAddressButton);
+
         addAddressButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
