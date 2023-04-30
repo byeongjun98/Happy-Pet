@@ -43,6 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " p_id text, " +
                 " title text, " +
                 " content text, " +
+                " category text, " +
+                " img text, " +
                 " mk_date timestamp default current_timestamp)";
 
 //        String insert_sql1 = "insert into " + "information"

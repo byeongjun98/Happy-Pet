@@ -5,6 +5,8 @@ public class InfoData {
     String p_id;
     String title;
     String content;
+    String category;
+    String img;
     String mk_date;
 
     public InfoData(int ino, String p_id, String title, String content, String mk_date) {
@@ -45,6 +47,22 @@ public class InfoData {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getMk_date() {

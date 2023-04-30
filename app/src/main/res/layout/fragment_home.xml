@@ -16,16 +16,17 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="Happy Pet"
-                    android:textSize="30dp"
                     android:textColor="#ff0000"
-                    android:textStyle="bold"/>
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -63,9 +64,9 @@
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/border_bottom_layout"
-                        android:elevation="30dp"
+                        android:elevation="20dp"
                         android:orientation="horizontal"
-                        android:padding="20dp">
+                        android:padding="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -88,7 +89,7 @@
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:layout_marginBottom="3dp"
-                                        android:src="@drawable/brain" />
+                                        android:src="@drawable/kidneys" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -116,13 +117,13 @@
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:layout_marginBottom="3dp"
-                                        android:src="@drawable/brain" />
+                                        android:src="@drawable/dentist" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:text="내과"
+                                        android:text="치과"
                                         android:textStyle="bold" />
                                 </LinearLayout>
 
@@ -151,13 +152,13 @@
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:layout_marginBottom="3dp"
-                                        android:src="@drawable/brain" />
+                                        android:src="@drawable/scissors" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:text="내과"
+                                        android:text="외과"
                                         android:textStyle="bold" />
                                 </LinearLayout>
 
@@ -179,13 +180,13 @@
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:layout_marginBottom="3dp"
-                                        android:src="@drawable/brain" />
+                                        android:src="@drawable/vision" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
-                                        android:text="내과"
+                                        android:text="안과"
                                         android:textStyle="bold" />
                                 </LinearLayout>
 
@@ -197,7 +198,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
-                        android:orientation="vertical">
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/section_border"
+                        android:orientation="vertical"
+                        android:padding="13dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -205,7 +212,7 @@
                             android:layout_marginLeft="15dp"
                             android:text="많이 바쁘시다면?"
                             android:textColor="@color/black"
-                            android:textSize="25dp"
+                            android:textSize="23dp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -293,7 +300,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/section_border"
+                android:padding="13dp"
+                android:layout_margin="10dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -303,13 +313,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="정보 공유"
-                        android:textSize="20dp"
+                        android:textSize="23dp"
+                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/moreInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/moreInfo"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="5dp"
                         android:text="더보기 +" />

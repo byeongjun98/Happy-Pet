@@ -137,4 +137,11 @@ public class FragmentHome extends Fragment {
             i++;
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        selectAllInfo();
+    }
 }

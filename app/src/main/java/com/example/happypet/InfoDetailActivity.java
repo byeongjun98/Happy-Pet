@@ -36,7 +36,7 @@ public class InfoDetailActivity extends Activity {
         Cursor cursor = database.rawQuery(selectAllInfo, null);
         cursor.moveToNext();
 
-        String date = cursor.getString(4);
+        String date = cursor.getString(6);
         date = date.substring(0, date.indexOf(' '));
         infoDetailTitle.setText(cursor.getString(2));
         infoDetailContent.setText(cursor.getString(3));
