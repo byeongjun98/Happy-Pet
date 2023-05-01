@@ -30,7 +30,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,7 +134,8 @@
                 android:layout_height="wrap_content">
                 <ListView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/comment_list"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -141,14 +143,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:padding="15dp"
         android:background="@drawable/border_top_bottom_line">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/comment_edt"
+            android:layout_weight="9"
             android:background="@android:color/transparent"
             android:hint="댓글을 입력해주세요."
             android:textSize="18dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center" />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/comment_btn"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:src="@drawable/send"/>
     </LinearLayout>
 </LinearLayout>

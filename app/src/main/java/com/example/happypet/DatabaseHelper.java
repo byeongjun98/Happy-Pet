@@ -47,6 +47,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " img text, " +
                 " mk_date timestamp default current_timestamp)";
 
+        String comment_create_sql = "create table if not exists comment(" +
+                " cno integer PRIMARY KEY autoincrement, " +
+                " ino integer, " +
+                " comment text, " +
+                " commenter text, " +
+                " reg_date timestamp default current_timestamp)";
+
 //        String insert_sql1 = "insert into " + "information"
 //                + "(p_id, title, content) "
 //                + " values "
@@ -69,6 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(user_create_sql);
         sqLiteDatabase.execSQL(information_create_sql);
+        sqLiteDatabase.execSQL(comment_create_sql);
 
 //        database.execSQL(insert_sql1);
 //        database.execSQL(insert_sql2);
