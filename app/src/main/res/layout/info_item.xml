@@ -30,6 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/info_detail_comment_cnt"
             android:text="댓글 수"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"/>

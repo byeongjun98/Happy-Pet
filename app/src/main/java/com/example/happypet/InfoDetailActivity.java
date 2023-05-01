@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 public class InfoDetailActivity extends Activity {
     ImageButton backInfoDetail, comment_btn;
     EditText comment_edt;
-    TextView infoDetailTitle, infoDetailIdDate, infoDetailContent;
+    TextView infoDetailTitle, infoDetailIdDate, infoDetailContent, commentCnt;
     ListView comment_list;
     SQLiteDatabase database;
 
@@ -40,6 +40,7 @@ public class InfoDetailActivity extends Activity {
         comment_btn = findViewById(R.id.comment_btn);
         comment_edt = findViewById(R.id.comment_edt);
         comment_list = findViewById(R.id.comment_list);
+        commentCnt = findViewById(R.id.comment_cnt);
 
         commentAdapter = new CommentAdapter(database);
         comment_list.setAdapter(commentAdapter);
@@ -72,6 +73,8 @@ public class InfoDetailActivity extends Activity {
 
         String selectAllComment = "select * from comment where ino=" + ino;
         Cursor cursor = database.rawQuery(selectAllComment, null);
+
+        commentCnt.setText("댓글 " + cursor.getCount());
 
         while(cursor.moveToNext()) {
             String comment = cursor.getString(2);

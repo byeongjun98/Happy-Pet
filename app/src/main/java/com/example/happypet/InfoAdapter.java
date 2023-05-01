@@ -1,6 +1,7 @@
 package com.example.happypet;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -49,11 +52,17 @@ public class InfoAdapter extends BaseAdapter {
         RelativeLayout infoLayout = view.findViewById(R.id.infoLayout);
         TextView title = view.findViewById(R.id.info_item_title);
         TextView idDate = view.findViewById(R.id.info_item_id_date);
+        TextView commentCnt = view.findViewById(R.id.info_detail_comment_cnt);
 
         InfoData infoData = items.get(i);
 
         title.setText(infoData.getTitle());
         idDate.setText(infoData.getP_id() + "   " + infoData.getMk_date());
+
+        String selectAllComment = "select * from comment where ino=" + infoData.getIno();
+        Cursor cursor = sqLiteDatabase.rawQuery(selectAllComment, null);
+
+        commentCnt.setText("댓글 " + cursor.getCount());
 
         infoLayout.setOnClickListener(new View.OnClickListener() {
             @Override
