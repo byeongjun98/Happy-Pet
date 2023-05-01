@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/back_realtime"
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/arrow" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="17dp">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:src="@drawable/chat"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전문 의료진에게 물어보세요"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평균 5분 안에 답변 드려요"
+                android:textSize="18dp"
+                android:layout_marginBottom="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginBottom="13dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/realtime_title"
+                android:padding="17dp"
+                android:hint="예) "
+                android:textColor="@color/black"
+                android:background="@drawable/border_edittext"
+                android:maxLines="1"
+                android:inputType="text"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ⓘ 물음표(?)로 끝나는 질문이면 더 좋아요."
+                android:textColor="#00afff"
+                android:textStyle="bold"
+                android:layout_marginBottom="27dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="질문"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginBottom="13dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:id="@+id/realtime_content"
+                android:background="@drawable/border_edittext"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:maxLines="10"
+                android:padding="17dp"
+                android:hint="내용을 입력해주세요."
+                android:layout_marginBottom="27dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카테고리"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginBottom="13dp"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="27dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/realtime_register"
+            android:text="물어보기"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#80ffffff"
+            android:background="@color/realtime_btn"
+            android:layout_margin="12dp"
+            android:enabled="false" />
+    </LinearLayout>
+</LinearLayout>

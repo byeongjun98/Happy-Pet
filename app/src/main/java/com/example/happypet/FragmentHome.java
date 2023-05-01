@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,9 @@ public class FragmentHome extends Fragment {
     TextView[] info_id_textView = new TextView[4];
     TextView moreInfo;
     LinearLayout[] infoLayout = new LinearLayout[4];
+    RelativeLayout medicine, dentist, surgery, ophthalmology;
+    RelativeLayout realtime_consulting, comprehensive_care;
+    LinearLayout subject_entire;
 
     int[] info_ino    = { R.id.ino1, R.id.ino2, R.id.ino3, R.id.ino4 };
     int[] info_id     = { R.id.info_id1, R.id.info_id2, R.id.info_id3, R.id.info_id4 };
@@ -76,28 +80,8 @@ public class FragmentHome extends Fragment {
 //        database.execSQL(insert_sql4);
 
         init(rootView);
+        setListener();
         selectAllInfo();
-
-        moreInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), InfoListActivity.class);
-                getContext().startActivity(intent);
-            }
-        });
-
-        for(int i=0; i<infoLayout.length; i++) {
-            String ino = info_ino_textView[i].getText().toString();
-
-            infoLayout[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getContext(), InfoDetailActivity.class);
-                    intent.putExtra("ino", ino);
-                    getContext().startActivity(intent);
-                }
-            });
-        }
 
         return rootView;
     }
@@ -120,6 +104,89 @@ public class FragmentHome extends Fragment {
         }
 
         moreInfo = rootView.findViewById(R.id.moreInfo);
+
+        medicine = rootView.findViewById(R.id.medicine);
+        dentist = rootView.findViewById(R.id.dentist);
+        surgery = rootView.findViewById(R.id.surgery);
+        ophthalmology = rootView.findViewById(R.id.ophthalmology);
+
+        realtime_consulting = rootView.findViewById(R.id.realtime_consulting);
+        comprehensive_care = rootView.findViewById(R.id.comprehensive_care);
+
+        subject_entire = rootView.findViewById(R.id.subject_entire);
+    }
+
+    public void setListener() {
+        moreInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), InfoListActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        for(int i=0; i<infoLayout.length; i++) {
+            String ino = info_ino_textView[i].getText().toString();
+
+            infoLayout[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), InfoDetailActivity.class);
+                    intent.putExtra("ino", ino);
+                    getContext().startActivity(intent);
+                }
+            });
+        }
+
+        medicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        dentist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        surgery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ophthalmology.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        subject_entire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        realtime_consulting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), RealtimeConsultingActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        comprehensive_care.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     public void selectAllInfo() {

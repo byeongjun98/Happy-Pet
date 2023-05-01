@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="write_btn">#99ccff</color>
+    <color name="realtime_btn">#e0e61f</color>
 </resources>

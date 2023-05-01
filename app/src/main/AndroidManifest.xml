@@ -36,6 +36,8 @@
         <activity android:name=".InfoListActivity" />
         <activity android:name=".searchAddressActivity"/>
         <activity android:name=".write_review_Activity"/>
+        <activity android:name=".RealtimeConsultingActivity"/>
+        <activity android:name=".SubjectActivity"/>
 
     </application>
 
