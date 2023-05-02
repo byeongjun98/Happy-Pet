@@ -29,6 +29,21 @@
             </intent-filter>
         </activity>
 
+<!--        <activity android:name=".InmyInfoActivity" />-->
+<!--        <activity android:name=".IncreditActivity" />-->
+<!--        <activity android:name=".InAddressActivity" />-->
+<!--        <activity android:name=".NoticeActivity" />-->
+<!--        <activity android:name=".ReviewActicity" />-->
+<!--        <activity android:name=".SettingActivity" />-->
+<!--        <activity android:name=".InfoWriteActivity" />-->
+<!--        <activity android:name=".InfoDetailActivity" />-->
+<!--        <activity android:name=".InfoListActivity" />-->
+<!--        <activity android:name=".searchAddressActivity"/>-->
+<!--        <activity android:name=".write_review_Activity"/>-->
+<!--        <activity android:name=".RealtimeConsultingActivity"/>-->
+<!--        <activity android:name=".SubjectActivity"/>-->
+<!--        <activity android:name=".addCreditCard"/>-->
+        <activity android:name=".FragmentListDetail" />
         <activity android:name=".InmyInfoActivity" />
         <activity android:name=".IncreditActivity" />
         <activity android:name=".InAddressActivity" />
