@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 인터넷 연결 확인-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -38,6 +42,7 @@
         <activity android:name=".write_review_Activity"/>
         <activity android:name=".RealtimeConsultingActivity"/>
         <activity android:name=".SubjectActivity"/>
+        <activity android:name=".addCreditCard"/>
 
     </application>
 
