@@ -50,6 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/white"
         android:layout_marginBottom="4dp">
         <LinearLayout
@@ -65,13 +66,21 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/sort_type"
                 android:text="기본순"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="20dp"
                 android:src="@drawable/opposite"
                 android:layout_gravity="center"/>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doctor_cnt"
+            android:text="총 ~명의 의사 검색"
+            android:textColor="#ff0000"
+            android:layout_gravity="center|right"/>
     </LinearLayout>
 
     <ScrollView
