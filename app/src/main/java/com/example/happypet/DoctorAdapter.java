@@ -47,7 +47,34 @@ public class DoctorAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.doctor_item, viewGroup, false);
 
+        TextView doctor_name = view.findViewById(R.id.doctor_name);
+        TextView star_rating = view.findViewById(R.id.star_rating);
+        TextView hospital_name = view.findViewById(R.id.hospital_name);
+        TextView subject_name = view.findViewById(R.id.subject_name);
 
+        DoctorData doctorData = items.get(i);
+        doctor_name.setText(doctorData.getName() + " 의사");
+        star_rating.setText(doctorData.getStar_rating());
+        hospital_name.setText(doctorData.getHospital());
+
+        String subject = doctorData.getSubject();
+        switch(subject) {
+            case "medicine":
+                subject = "내과";
+                break;
+            case "dentist":
+                subject = "치과";
+                break;
+            case "surgery":
+                subject = "외과";
+                break;
+            case "ophthalmology":
+                subject = "안과";
+                break;
+            default:
+                subject = "기타";
+        }
+        subject_name.setText(subject);
 
         return view;
     }

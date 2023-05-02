@@ -82,6 +82,7 @@ public class FragmentHome extends Fragment {
         init(rootView);
         setListener();
         selectAllInfo();
+        doctor_input_test();
 
         return rootView;
     }
@@ -141,28 +142,40 @@ public class FragmentHome extends Fragment {
         medicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), SubjectActivity.class);
+                intent.putExtra("subject1", "내과");
+                intent.putExtra("subject2", "medicine");
+                getContext().startActivity(intent);
             }
         });
 
         dentist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), SubjectActivity.class);
+                intent.putExtra("subject1", "치과");
+                intent.putExtra("subject2", "dentist");
+                getContext().startActivity(intent);
             }
         });
 
         surgery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), SubjectActivity.class);
+                intent.putExtra("subject1", "외과");
+                intent.putExtra("subject2", "surgery");
+                getContext().startActivity(intent);
             }
         });
 
         ophthalmology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), SubjectActivity.class);
+                intent.putExtra("subject1", "안과");
+                intent.putExtra("subject2", "ophthalmology");
+                getContext().startActivity(intent);
             }
         });
 
@@ -203,6 +216,25 @@ public class FragmentHome extends Fragment {
             Log.d("aaa", cursor.getString(1) + cursor.getString(2));
             i++;
         }
+    }
+
+    void doctor_input_test() {
+        String doctor_delete = "delete from doctor";
+
+        String doctor_insert = "insert into " + "doctor"
+                + "(name, star_rating, subject, hospital) "
+                + " values "
+                + " ('" + "이상문', " + "'5.0', " + "'medicine', " + "'원주시내병원')";
+
+        database.execSQL(doctor_delete);
+        for(int i=0; i<5; i++) {
+            database.execSQL(doctor_insert);
+        }
+
+//        String insert_sql4 = "insert into " + "information"
+//                + "(p_id, title, content) "
+//                + " values "
+//                + " ('" + "aaaa', " + "'강아지+고양이', " + "'ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ')";
     }
 
     @Override
