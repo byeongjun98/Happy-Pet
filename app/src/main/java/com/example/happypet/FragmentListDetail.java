@@ -1,5 +1,6 @@
 package com.example.happypet;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,13 +38,24 @@ public class FragmentListDetail extends AppCompatActivity {
         setData();
 
         Button button = findViewById(R.id.list_detail_button);
+        Button button1 = findViewById(R.id.reviewwrite);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), write_review_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
     private void getData() {
         if (getIntent().hasExtra("진료사진") && getIntent().hasExtra("의사이름") && getIntent().hasExtra("병원이름") && getIntent().hasExtra("내 증상") && getIntent().hasExtra("진료비")) {
