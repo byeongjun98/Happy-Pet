@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 인터넷 연결 확인-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,6 +29,21 @@
             </intent-filter>
         </activity>
 
+<!--        <activity android:name=".InmyInfoActivity" />-->
+<!--        <activity android:name=".IncreditActivity" />-->
+<!--        <activity android:name=".InAddressActivity" />-->
+<!--        <activity android:name=".NoticeActivity" />-->
+<!--        <activity android:name=".ReviewActicity" />-->
+<!--        <activity android:name=".SettingActivity" />-->
+<!--        <activity android:name=".InfoWriteActivity" />-->
+<!--        <activity android:name=".InfoDetailActivity" />-->
+<!--        <activity android:name=".InfoListActivity" />-->
+<!--        <activity android:name=".searchAddressActivity"/>-->
+<!--        <activity android:name=".write_review_Activity"/>-->
+<!--        <activity android:name=".RealtimeConsultingActivity"/>-->
+<!--        <activity android:name=".SubjectActivity"/>-->
+<!--        <activity android:name=".addCreditCard"/>-->
+        <activity android:name=".FragmentListDetail" />
         <activity android:name=".InmyInfoActivity" />
         <activity android:name=".IncreditActivity" />
         <activity android:name=".InAddressActivity" />
@@ -38,6 +57,7 @@
         <activity android:name=".write_review_Activity"/>
         <activity android:name=".RealtimeConsultingActivity"/>
         <activity android:name=".SubjectActivity"/>
+        <activity android:name=".addCreditCard"/>
 
     </application>
 
