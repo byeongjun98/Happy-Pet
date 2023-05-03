@@ -82,8 +82,8 @@ public class FragmentHome extends Fragment {
 //        database.execSQL(insert_sql4);
 
         init(rootView);
-        setListener();
         selectAllInfo();
+        setListener();
         doctor_input_test();
 
         return rootView;
@@ -215,7 +215,7 @@ public class FragmentHome extends Fragment {
             info_ino_textView[i].setText(cursor.getInt(0) + "");
             info_id_textView[i].setText(cursor.getString(1));
             info_title_textView[i].setText(cursor.getString(2));
-            Log.d("aaa", cursor.getString(1) + cursor.getString(2));
+            Log.d("aaa", cursor.getInt(0) + "");
             i++;
         }
     }

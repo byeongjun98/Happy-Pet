@@ -55,6 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " reg_date timestamp default current_timestamp)";
 
         String doctor_create_sql = "create table if not exists doctor(" +
+                " dno integer PRIMARY KEY autoincrement, " +
                 " name text, " +
                 " star_rating text, " +
                 " subject text, " +

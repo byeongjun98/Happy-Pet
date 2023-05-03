@@ -58,6 +58,7 @@
         <activity android:name=".RealtimeConsultingActivity"/>
         <activity android:name=".SubjectActivity"/>
         <activity android:name=".addCreditCard"/>
+        <activity android:name=".DoctorDetailActivity"/>
 
     </application>
 

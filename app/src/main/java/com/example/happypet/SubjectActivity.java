@@ -70,12 +70,13 @@ public class SubjectActivity extends Activity {
         doctor_cnt.setText("총 " + cursor.getCount() + "명의 의사 검색");
 
         while(cursor.moveToNext()) {
-            String name = cursor.getString(0);
-            String star_rating = cursor.getString(1);
-            String subject = cursor.getString(2);
-            String hospital = cursor.getString(3);
+            int dno = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String star_rating = cursor.getString(2);
+            String subject = cursor.getString(3);
+            String hospital = cursor.getString(4);
 
-            DoctorData doctorData = new DoctorData(name, star_rating, subject, hospital);
+            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital);
             doctorAdapter.addItem(doctorData);
 
             doctorAdapter.notifyDataSetChanged();
