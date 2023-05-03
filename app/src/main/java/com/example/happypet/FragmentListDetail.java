@@ -50,6 +50,8 @@ public class FragmentListDetail extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), write_review_Activity.class);
+                intent.putExtra("doctor_name", doctor_name.getText());
+                intent.putExtra("hospital_name", hospital_name.getText());
                 startActivity(intent);
             }
         });
