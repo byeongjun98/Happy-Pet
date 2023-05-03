@@ -83,6 +83,7 @@ public class DoctorAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), DoctorDetailActivity.class);
                 intent.putExtra("dno", doctorData.getDno());
+                intent.putExtra("hospital", doctorData.getHospital());
                 view.getContext().startActivity(intent);
             }
         });
