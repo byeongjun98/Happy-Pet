@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/icon1_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyPet"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity android:name=".MainActivity"
             android:exported="false" />

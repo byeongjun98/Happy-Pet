@@ -38,19 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:ems="10"
-            android:hint="이름을 입력하세요"
+            android:hint="생년월일"
             android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
-
-            />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="전화번호를 입력하세요"
-            android:inputType="phone"
             android:selectAllOnFocus="true"
 
             />
@@ -61,11 +50,38 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:ems="10"
-            android:hint="생년월일을 입력하세요"
-            android:inputType="textPersonName"
+            android:hint="카드번호"
+            android:inputType="phone|number"
             android:selectAllOnFocus="true"
 
             />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="유효기간 MM/YY"
+            android:inputType="date"
+            android:selectAllOnFocus="true"
+
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:ems="10"
+            android:hint="카드 비밀번호 앞 2자리"
+            android:inputType="numberPassword"
+            android:selectAllOnFocus="true"
+
+            />
+        <Button
+        android:text="저장"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/creditcardinsertbutton"
         />
     </LinearLayout>
 </LinearLayout>
