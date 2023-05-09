@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="3dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/border_bottom_line_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doctor_detail_hospital"
+            android:layout_centerHorizontal="true"
+            android:text="병원 이름"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="23dp"
+            android:id="@+id/back_doctor_detail"
+            android:src="@drawable/arrow"
+            android:scaleType="fitXY"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="13dp"
+                android:layout_marginBottom="13dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_name"
+                        android:text="의사 이름"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="23dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_hospital_name"
+                        android:text="병원 이름"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_subject"
+                        android:text="subject"
+                        android:textColor="#adadad"
+                        android:background="#ededed"
+                        android:padding="5dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:src="@drawable/doctor" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="23dp"
+                android:layout_margin="13dp"
+                android:background="@drawable/border_edittext">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="경력사항"
+                    android:textColor="@color/black"
+                    android:textSize="23dp"
+                    android:layout_marginBottom="13dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·  ..."
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·  ..."
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·  ..."
+                    android:textSize="17dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_edittext"
+                android:padding="23dp"
+                android:layout_margin="13dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5.0"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:layout_marginRight="13dp"/>
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:rating="5"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:progressTint="#ff7200"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="후기 ~개"
+                        android:gravity="right"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/care_register"
+            android:text="진료 신청"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#80ffffff"
+            android:background="@color/realtime_btn"
+            android:layout_margin="12dp"
+            android:enabled="false" />
+    </LinearLayout>
+</LinearLayout>

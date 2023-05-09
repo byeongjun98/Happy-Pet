@@ -1,16 +1,26 @@
 package com.example.happypet;
 
 public class DoctorData {
+    int dno;
     String name;
     String star_rating;
     String subject;
     String hospital;
 
-    public DoctorData(String name, String star_rating, String subject, String hospital) {
+    public DoctorData(int dno, String name, String star_rating, String subject, String hospital) {
+        this.dno = dno;
         this.name = name;
         this.star_rating = star_rating;
         this.subject = subject;
         this.hospital = hospital;
+    }
+
+    public int getDno() {
+        return dno;
+    }
+
+    public void setDno(int dno) {
+        this.dno = dno;
     }
 
     public String getName() {

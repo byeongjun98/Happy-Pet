@@ -41,6 +41,8 @@ public class FragmentHome extends Fragment {
     int[] info_title  = { R.id.info_title1, R.id.info_title2, R.id.info_title3, R.id.info_title4 };
     int[] info_layout = { R.id.infoLayout1, R.id.infoLayout2, R.id.infoLayout3, R.id.infoLayout4 };
 
+    String[] subject_test = { "medicine", "dentist", "surgery", "ophthalmology" };
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -80,8 +82,8 @@ public class FragmentHome extends Fragment {
 //        database.execSQL(insert_sql4);
 
         init(rootView);
-        setListener();
         selectAllInfo();
+        setListener();
         doctor_input_test();
 
         return rootView;
@@ -213,7 +215,7 @@ public class FragmentHome extends Fragment {
             info_ino_textView[i].setText(cursor.getInt(0) + "");
             info_id_textView[i].setText(cursor.getString(1));
             info_title_textView[i].setText(cursor.getString(2));
-            Log.d("aaa", cursor.getString(1) + cursor.getString(2));
+            Log.d("aaa", cursor.getInt(0) + "");
             i++;
         }
     }
@@ -221,13 +223,17 @@ public class FragmentHome extends Fragment {
     void doctor_input_test() {
         String doctor_delete = "delete from doctor";
 
-        String doctor_insert = "insert into " + "doctor"
-                + "(name, star_rating, subject, hospital) "
-                + " values "
-                + " ('" + "이상문', " + "'5.0', " + "'medicine', " + "'원주시내병원')";
-
         database.execSQL(doctor_delete);
-        for(int i=0; i<5; i++) {
+
+        for(int i=0; i<20; i++) {
+            String star_rating = String.valueOf(((float)(int)(Math.random() * 10) + 40) / 10);
+            int idx = (int)(Math.random() * subject_test.length);
+
+            String doctor_insert = "insert into " + "doctor"
+                    + "(name, star_rating, subject, hospital) "
+                    + " values "
+                    + " ('" + "이상문', '" + star_rating +"', " + "'"+ subject_test[idx] + "', " + "'원주시내병원')";
+
             database.execSQL(doctor_insert);
         }
 

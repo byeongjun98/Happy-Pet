@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -47,6 +48,7 @@ public class DoctorAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.doctor_item, viewGroup, false);
 
+        LinearLayout doctor_layout = view.findViewById(R.id.doctor_layout);
         TextView doctor_name = view.findViewById(R.id.doctor_name);
         TextView star_rating = view.findViewById(R.id.star_rating);
         TextView hospital_name = view.findViewById(R.id.hospital_name);
@@ -75,6 +77,16 @@ public class DoctorAdapter extends BaseAdapter {
                 subject = "기타";
         }
         subject_name.setText(subject);
+
+        doctor_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DoctorDetailActivity.class);
+                intent.putExtra("dno", doctorData.getDno());
+                intent.putExtra("hospital", doctorData.getHospital());
+                view.getContext().startActivity(intent);
+            }
+        });
 
         return view;
     }
