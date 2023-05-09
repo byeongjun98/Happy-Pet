@@ -65,7 +65,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " card_number text PRIMARY KEY , " +
                 " card_password text, " +
                 " Birth text, " +
-                " expiration_period text)";
+                " expiration_period text, " +
+                " card_type text)";
 
 //        String insert_sql1 = "insert into " + "information"
 //                + "(p_id, title, content) "

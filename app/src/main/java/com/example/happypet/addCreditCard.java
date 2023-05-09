@@ -18,6 +18,8 @@ public class addCreditCard extends Activity {
     EditText card_number;
     EditText expiration_period;
 
+    EditText card_type;
+
     DatabaseHelper dbHelper;
     SQLiteDatabase database;
 
@@ -33,6 +35,7 @@ public class addCreditCard extends Activity {
         card_password = findViewById(R.id.card_password);
         card_number = findViewById(R.id.cardnumber);
         expiration_period =findViewById(R.id.expiration_period);
+        card_type = findViewById(R.id.card_type);
 
         Button button = findViewById(R.id.creditcardinsertbutton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -42,10 +45,11 @@ public class addCreditCard extends Activity {
                 String cardpass = card_password.getText().toString();
                 String cardnum = card_number.getText().toString();
                 String expe = expiration_period.getText().toString();
+                String type = card_type.getText().toString();
 
-                String credit_insert = " insert into " + "credit" + " (card_number, card_password, Birth, expiration_period) " +
+                String credit_insert = " insert into " + "credit" + " (card_number, card_password, Birth, expiration_period,card_type ) " +
                                         " values " +
-                                        " ('" +cardnum + "', '" + cardpass + "','" + bir + "', '" + expe + "')"
+                                        " ('" +cardnum + "', '" + cardpass + "','" + bir + "', '" + expe + "','"+ type +"')"
                                         + "";
                 database.execSQL(credit_insert);
 

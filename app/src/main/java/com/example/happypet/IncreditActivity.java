@@ -46,8 +46,9 @@ public class IncreditActivity extends Activity {
             String cardpass = cursor.getString(1);
             String cardnum = cursor.getString(0);
             String expe = cursor.getString(3);
+            String type = cursor.getString(4);
 
-            textView.setText(cardnum+"                            "+expe);
+            textView.setText(type+ "    " +cardnum+"                 "+expe);
         }
         }
 
