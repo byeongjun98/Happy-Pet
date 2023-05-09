@@ -36,6 +36,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/birth"
             android:layout_margin="15dp"
             android:ems="10"
             android:hint="생년월일"
@@ -45,7 +46,7 @@
             />
 
         <EditText
-
+            android:id="@+id/cardnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
@@ -57,6 +58,7 @@
             />
 
         <EditText
+            android:id="@+id/expiration_period"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
@@ -67,6 +69,7 @@
 
             />
         <EditText
+            android:id="@+id/card_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
