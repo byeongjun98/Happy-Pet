@@ -68,6 +68,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " expiration_period text, " +
                 " card_type text)";
 
+        String my_info_sql = "create table if not exists my_info(" +
+                " user_name text PRIMARY KEY , " +
+                " user_tel text, " +
+                " user_birth text)";
+
 //        String insert_sql1 = "insert into " + "information"
 //                + "(p_id, title, content) "
 //                + " values "
@@ -93,6 +98,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(comment_create_sql);
         sqLiteDatabase.execSQL(doctor_create_sql);
         sqLiteDatabase.execSQL(credit_create_sql);
+        sqLiteDatabase.execSQL(my_info_sql);
+
 
 //        database.execSQL(insert_sql1);
 //        database.execSQL(insert_sql2);

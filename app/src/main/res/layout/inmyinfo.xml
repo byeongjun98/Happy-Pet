@@ -1,72 +1,135 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:background="@color/white"
     android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_weight="1"
-            android:text="내 정보 관리"
-            android:textSize="25dp"
-            android:textStyle="bold" />
-    </RelativeLayout>
-
-
-
-</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:text="내 정보 관리"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        >
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="이름을 입력하세요"
-            android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
+            android:orientation="vertical"
+            android:id="@+id/my_info_top">
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="이름을 입력하세요"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
 
-            />
+                />
 
-        <EditText
-            android:id="@+id/userphonenuber"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/user_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="전화번호를 입력하세요"
+                android:inputType="phone"
+                android:selectAllOnFocus="true"
+
+                />
+
+            <EditText
+                android:id="@+id/user_birth_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="생년월일을 입력하세요"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true" />
+
+            <Button
+                android:id="@+id/my_info_insert_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:selectAllOnFocus="true"
+                android:text="저장"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-           android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="전화번호를 입력하세요"
-            android:inputType="phone"
-            android:selectAllOnFocus="true"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/my_info_bottom"
+            android:visibility="gone">
 
-            />
+            <TextView
+                android:id="@+id/user_name_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="이름"
+                android:textSize="15dp"
 
-        <EditText
-            android:id="@+id/userbirthday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:ems="10"
-            android:hint="생년월일을 입력하세요"
-            android:inputType="textPersonName"
-            android:selectAllOnFocus="true"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true"
 
-            />
-        />
-</LinearLayout>
+                />
+
+            <TextView
+                android:id="@+id/user_phone_number_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:ems="10"
+                android:hint="전화번호"
+                android:textSize="15dp"
+
+                android:inputType="phone"
+                android:selectAllOnFocus="true"
+
+                />
+
+            <TextView
+                android:id="@+id/user_birth_day_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textSize="15dp"
+                android:ems="10"
+                android:hint="생년월일"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="true" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
