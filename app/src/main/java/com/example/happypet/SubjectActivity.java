@@ -12,14 +12,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class SubjectActivity extends Activity {
+public class SubjectActivity extends AppCompatActivity implements BottomSheetDialog.BottomSheetListener {
     LinearLayout subject_category, sort;
-    TextView subject_text, doctor_cnt;
+    TextView subject_text, doctor_cnt, sort_type;
     ImageButton subject_back;
     ListView doctor_list;
     DoctorAdapter doctorAdapter;
     SQLiteDatabase database;
+
+    String subject2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,13 +36,16 @@ public class SubjectActivity extends Activity {
         doctor_list.setAdapter(doctorAdapter);
         subject_text = findViewById(R.id.subject_text);
         doctor_cnt = findViewById(R.id.doctor_cnt);
+        subject_category = findViewById(R.id.subject_category);
+        sort = findViewById(R.id.sort);
+        sort_type = findViewById(R.id.sort_type);
 
         Intent intent = getIntent();
         String subject1 = intent.getStringExtra("subject1");
-        String subject2 = intent.getStringExtra("subject2");
+        subject2 = intent.getStringExtra("subject2");
         subject_text.setText(subject1);
 
-        select_subject_doctor(subject2);
+        select_subject_doctor();
 
         setListener();
     }
@@ -59,9 +65,24 @@ public class SubjectActivity extends Activity {
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
             }
         });
+
+        subject_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        sort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(sort_type.getText().toString());
+                bottomSheetDialog.show(getSupportFragmentManager(), "BottomSheet");
+            }
+        });
     }
 
-    public void select_subject_doctor(String subject2) {
+    public void select_subject_doctor() {
         doctorAdapter.clear();
 
         String selectAllInfo = "select * from doctor where subject='" + subject2 + "'";
@@ -81,5 +102,50 @@ public class SubjectActivity extends Activity {
 
             doctorAdapter.notifyDataSetChanged();
         }
+    }
+
+    @Override
+    public void onLinearLayoutClicked(String text) {
+        sort_type.setText(text);
+
+        switch (sort_type.getText().toString()) {
+            case "기본순":
+                select_subject_doctor();
+                break;
+            case "거리순":
+                break;
+            case "후기많은순":
+                break;
+            case "별점많은순":
+                select_sort("star_rating");
+                break;
+        }
+    }
+
+    void select_sort(String sort_type) {
+        doctorAdapter.clear();
+
+        String sort_select = "select * from doctor where subject='" + subject2 + "'"
+                                + " order by " + sort_type + " desc";
+
+        Cursor cursor = database.rawQuery(sort_select, null);
+
+        while(cursor.moveToNext()) {
+            int dno = cursor.getInt(0);
+            String name = cursor.getString(1);
+            String star_rating = cursor.getString(2);
+            String subject = cursor.getString(3);
+            String hospital = cursor.getString(4);
+
+            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital);
+            doctorAdapter.addItem(doctorData);
+
+            doctorAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

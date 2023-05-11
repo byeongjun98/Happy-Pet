@@ -205,7 +205,7 @@ public class FragmentHome extends Fragment {
     }
 
     public void selectAllInfo() {
-        String selectAllInfo = "select * from information";
+        String selectAllInfo = "select * from information LIMIT 4";
 
         Cursor cursor = database.rawQuery(selectAllInfo, null);
         Log.d("sssss", cursor.getCount() + "");
