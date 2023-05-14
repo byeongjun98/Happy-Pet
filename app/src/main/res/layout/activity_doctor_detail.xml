@@ -38,13 +38,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:descendantFocusability="blocksDescendants">
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="13dp"
-                android:layout_marginBottom="13dp">
+                android:padding="13dp">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -84,6 +84,34 @@
                         android:layout_width="95dp"
                         android:layout_height="95dp"
                         android:src="@drawable/doctor" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="13dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doctor_detail_add_doctor"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_reg_doctor"
+                        android:text="+ 전담 의사 등록"
+                        android:padding="11dp"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:background="#ff9500"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_add_doctor_text"
+                        android:text="0명 등록중"
+                        android:layout_marginTop="5dp"/>
+
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -130,6 +158,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_rating_text"
                         android:text="5.0"
                         android:textColor="@color/black"
                         android:textSize="18dp"
@@ -145,14 +174,16 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/doctor_detail_review_cnt"
                         android:text="후기 ~개"
                         android:gravity="right"/>
                 </LinearLayout>
             </LinearLayout>
             <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/pager">
+                android:layout_height="700dp"
+                android:id="@+id/pager"
+                android:layout_marginTop="17dp">
                 <androidx.viewpager.widget.PagerTitleStrip
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -176,9 +207,8 @@
             android:text="진료 신청"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="#80ffffff"
+            android:textColor="#ffffff"
             android:background="@color/realtime_btn"
-            android:layout_margin="12dp"
-            android:enabled="false" />
+            android:layout_margin="12dp" />
     </LinearLayout>
 </LinearLayout>

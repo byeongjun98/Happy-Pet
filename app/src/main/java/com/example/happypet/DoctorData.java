@@ -6,13 +6,15 @@ public class DoctorData {
     String star_rating;
     String subject;
     String hospital;
+    int customer_num;
 
-    public DoctorData(int dno, String name, String star_rating, String subject, String hospital) {
+    public DoctorData(int dno, String name, String star_rating, String subject, String hospital, int customer_num) {
         this.dno = dno;
         this.name = name;
         this.star_rating = star_rating;
         this.subject = subject;
         this.hospital = hospital;
+        this.customer_num = customer_num;
     }
 
     public int getDno() {
@@ -53,5 +55,13 @@ public class DoctorData {
 
     public void setHospital(String hospital) {
         this.hospital = hospital;
+    }
+
+    public int getCustomer_num() {
+        return customer_num;
+    }
+
+    public void setCustomer_num(int customer_num) {
+        this.customer_num = customer_num;
     }
 }

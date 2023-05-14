@@ -41,6 +41,19 @@ public class FragmentHome extends Fragment {
     int[] info_title  = { R.id.info_title1, R.id.info_title2, R.id.info_title3, R.id.info_title4 };
     int[] info_layout = { R.id.infoLayout1, R.id.infoLayout2, R.id.infoLayout3, R.id.infoLayout4 };
 
+    String[] review_content = {
+            "친절하게 설명해주셨어요~",
+            "빠르고 정확하게 진단해주셨습니다.",
+            "꼼꼼하게 알려주시고 신청하고 바로연락주셔서 좋았습니다.",
+            "친절하고 세심하게 봐주셨어요",
+            "빠른시간내에 연락주시고 친절하셨습니다.",
+            "늦은시간에 너무 감사합니다",
+            "전화로 친절하게 알려주셨어요",
+            "신속하게 친절하게 해주셨습니다.",
+            "늦은 시간에도 감사합니다!! :)",
+            "새벽에도 추가적인 증상 어떠냐 물어봐 주셨어요"
+    };
+
     String[] subject_test = { "medicine", "dentist", "surgery", "ophthalmology" };
 
     @Nullable
@@ -85,6 +98,7 @@ public class FragmentHome extends Fragment {
         selectAllInfo();
         setListener();
         doctor_input_test();
+        doctor_review_input_test();
 
         return rootView;
     }
@@ -230,9 +244,9 @@ public class FragmentHome extends Fragment {
             int idx = (int)(Math.random() * subject_test.length);
 
             String doctor_insert = "insert into " + "doctor"
-                    + "(name, star_rating, subject, hospital) "
+                    + "(name, star_rating, subject, hospital, customer_num) "
                     + " values "
-                    + " ('" + "이상문', '" + star_rating +"', " + "'"+ subject_test[idx] + "', " + "'원주시내병원')";
+                    + " ('" + "이상문', '" + star_rating +"', " + "'"+ subject_test[idx] + "', " + "'원주시내병원', " + 100 +")";
 
             database.execSQL(doctor_insert);
         }
@@ -241,6 +255,24 @@ public class FragmentHome extends Fragment {
 //                + "(p_id, title, content) "
 //                + " values "
 //                + " ('" + "aaaa', " + "'강아지+고양이', " + "'ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ')";
+    }
+
+    void doctor_review_input_test() {
+        String doctor_review_delete = "delete from doctor_review";
+
+        database.execSQL(doctor_review_delete);
+
+        for(int i=0; i<100; i++) {
+            String star_rating = String.valueOf(((float)(int)(Math.random() * 10) + 40) / 10);
+            int dno = (int)(Math.random()*20) + 1;
+            int idx = (int)(Math.random()*review_content.length);
+
+            String doctor_review_insert = "insert into " + "doctor_review"
+                    + "(dno, star_rating, content) "
+                    + " values "
+                    + " (" + dno + ", '" + star_rating +"', '" + review_content[idx] + "')";
+            database.execSQL(doctor_review_insert);
+        }
     }
 
     @Override

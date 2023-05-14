@@ -45,13 +45,26 @@
                 android:textSize="18dp"
                 android:layout_marginBottom="50dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="제목"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:layout_marginBottom="13dp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="13dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·"
+                    android:textColor="#ff0000"
+                    android:textSize="35dp"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="제목"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,13 +84,26 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="27dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="질문"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:layout_marginBottom="13dp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="13dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·"
+                    android:textColor="#ff0000"
+                    android:textSize="35dp"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="질문"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
@@ -90,18 +116,55 @@
                 android:hint="내용을 입력해주세요."
                 android:layout_marginBottom="27dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="카테고리"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:layout_marginBottom="13dp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="13dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="·"
+                    android:textColor="#ff0000"
+                    android:textSize="35dp"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:id="@+id/realtime_spinner"
-                android:layout_marginBottom="27dp"/>
+                android:layout_marginBottom="27dp"
+                android:background="@drawable/border_edittext"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사진 첨부[선택]"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:layout_marginBottom="13dp"/>
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/border_edittext"
+                android:padding="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textSize="35dp"
+                    android:textColor="#dcdcdc"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

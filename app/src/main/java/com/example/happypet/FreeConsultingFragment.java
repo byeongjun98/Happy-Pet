@@ -13,6 +13,10 @@ public class FreeConsultingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_free_consulting, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_free_consulting, container, false);
+
+
+
+        return rootView;
     }
 }

@@ -53,11 +53,13 @@ public class DoctorAdapter extends BaseAdapter {
         TextView star_rating = view.findViewById(R.id.star_rating);
         TextView hospital_name = view.findViewById(R.id.hospital_name);
         TextView subject_name = view.findViewById(R.id.subject_name);
+        TextView doctor_item_review = view.findViewById(R.id.doctor_item_review);
 
         DoctorData doctorData = items.get(i);
         doctor_name.setText(doctorData.getName() + " 의사");
         star_rating.setText(doctorData.getStar_rating());
         hospital_name.setText(doctorData.getHospital());
+        doctor_item_review.setText("(" + select_customer_num_cnt(doctorData.getDno()) + "+)");
 
         String subject = doctorData.getSubject();
         switch(subject) {
@@ -87,10 +89,18 @@ public class DoctorAdapter extends BaseAdapter {
                 intent.putExtra("hospital", doctorData.getHospital());
                 intent.putExtra("rating", doctorData.getStar_rating());
                 intent.putExtra("subject", doctorData.getSubject());
+                intent.putExtra("customer_num", doctorData.getCustomer_num());
                 view.getContext().startActivity(intent);
             }
         });
 
         return view;
+    }
+
+    int select_customer_num_cnt(int dno) {
+        String customer_num_cnt = "select * from doctor_review where dno = " + dno;
+        Cursor cursor = sqLiteDatabase.rawQuery(customer_num_cnt, null);
+
+        return cursor.getCount();
     }
 }

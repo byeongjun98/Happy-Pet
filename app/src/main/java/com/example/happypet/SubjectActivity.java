@@ -96,8 +96,9 @@ public class SubjectActivity extends AppCompatActivity implements BottomSheetDia
             String star_rating = cursor.getString(2);
             String subject = cursor.getString(3);
             String hospital = cursor.getString(4);
+            int customer_num = cursor.getInt(5);
 
-            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital);
+            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital, customer_num);
             doctorAdapter.addItem(doctorData);
 
             doctorAdapter.notifyDataSetChanged();
@@ -136,8 +137,9 @@ public class SubjectActivity extends AppCompatActivity implements BottomSheetDia
             String star_rating = cursor.getString(2);
             String subject = cursor.getString(3);
             String hospital = cursor.getString(4);
+            int customer_num = cursor.getInt(5);
 
-            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital);
+            DoctorData doctorData = new DoctorData(dno, name, star_rating, subject, hospital, customer_num);
             doctorAdapter.addItem(doctorData);
 
             doctorAdapter.notifyDataSetChanged();

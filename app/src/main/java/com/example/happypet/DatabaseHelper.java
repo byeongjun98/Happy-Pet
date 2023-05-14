@@ -29,8 +29,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         Log.d("database", "데이터베이스 생성");
 
-//        database = getDatabaseHelper(context).getWritableDatabase();
-
         String user_create_sql = "create table if not exists user(" +
                 " id text PRIMARY KEY, " +
                 " pwd text, " +
@@ -59,7 +57,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " name text, " +
                 " star_rating text, " +
                 " subject text, " +
-                " hospital text)";
+                " hospital text, " +
+                " customer_num integer)";
+
+        String doctor_review_create_sql = "create table if not exists doctor_review(" +
+                " rno integer PRIMARY KEY autoincrement, " +
+                " dno integer, " +
+                " star_rating text, " +
+                " content text, " +
+                " reg_date timestamp default current_timestamp)";
+
+        String free_consulting_create_sql = "create table if not exists free_consulting(" +
+                " fno integer PRIMARY KEY autoincrement, " +
+                " p_id text, " +
+                " title text, " +
+                " question text, " +
+                " category text, " +
+                " image text, " +
+                " reg_date timestamp default current_timestamp)";
 
         String credit_create_sql = "create table if not exists credit(" +
                 " card_number text PRIMARY KEY , " +
@@ -73,38 +88,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " user_tel text, " +
                 " user_birth text)";
 
-//        String insert_sql1 = "insert into " + "information"
-//                + "(p_id, title, content) "
-//                + " values "
-//                + " (aaaa, 캣타워가생겼어요, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
-//
-//        String insert_sql2 = "insert into " + "information"
-//                + "(p_id, title, content) "
-//                + " values "
-//                + " (aaaa, 우리거북이가아파요, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
-//
-//        String insert_sql3 = "insert into " + "information"
-//                + "(p_id, title, content) "
-//                + " values "
-//                + " (aaaa, ㅎㅎ, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
-//
-//        String insert_sql4 = "insert into " + "information"
-//                + "(p_id, title, content) "
-//                + " values "
-//                + " (aaaa, 강아지+고양이, ㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ)";
-
         sqLiteDatabase.execSQL(user_create_sql);
         sqLiteDatabase.execSQL(information_create_sql);
         sqLiteDatabase.execSQL(comment_create_sql);
         sqLiteDatabase.execSQL(doctor_create_sql);
+        sqLiteDatabase.execSQL(doctor_review_create_sql);
+        sqLiteDatabase.execSQL(free_consulting_create_sql);
         sqLiteDatabase.execSQL(credit_create_sql);
         sqLiteDatabase.execSQL(my_info_sql);
-
-
-//        database.execSQL(insert_sql1);
-//        database.execSQL(insert_sql2);
-//        database.execSQL(insert_sql3);
-//        database.execSQL(insert_sql4);
 
         Log.d("database exec", "데이터베이스 실행");
     }
