@@ -67,6 +67,28 @@ public class FragmentHome extends Fragment {
 
     String[] subject_test = { "medicine", "dentist", "surgery", "ophthalmology" };
 
+    Thread th1 = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            int position = 0;
+            while(true) {
+                try {
+                    Thread.sleep(3000);
+                    position += 1;
+
+                    if(position >= 10) {
+                        position = 0;
+                    }
+                    free_consulting_list.smoothScrollToPosition(position);
+
+                } catch (InterruptedException e) {
+                    position = 0;
+                }
+            }
+
+        }
+    });
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -120,6 +142,9 @@ public class FragmentHome extends Fragment {
         doctor_review_input_test();
         free_consulting_input_test();
         select_free_consulting();
+        free_consulting_comment_input_test();
+
+        th1.start();
 
         return rootView;
     }
@@ -249,6 +274,8 @@ public class FragmentHome extends Fragment {
             public void onClick(View view) {
                 view.startAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate));
                 select_free_consulting();
+                free_consulting_list.smoothScrollToPosition(0);
+                th1.interrupt();
             }
         });
 
@@ -288,7 +315,7 @@ public class FragmentHome extends Fragment {
     public void select_free_consulting() {
         adapter.clear();
 
-        String selectFreeConsulting = "select * from free_consulting LIMIT 20";
+        String selectFreeConsulting = "select * from free_consulting order by reg_date desc";
         Cursor cursor = database.rawQuery(selectFreeConsulting, null);
 
         while(cursor.moveToNext()) {
@@ -364,6 +391,18 @@ public class FragmentHome extends Fragment {
 
             database.execSQL(free_consulting_insert);
         }
+    }
+
+    void free_consulting_comment_input_test() {
+        String free_consulting_comment_delete = "delete from free_consulting_comment";
+        database.execSQL(free_consulting_comment_delete);
+
+        String free_consulting_comment_insert = "insert into " + "free_consulting_comment"
+                + "(fno, comment, commenter) "
+                + " values "
+                + " (" + 1 + ", '" + "그러면 안되요~" +"', '" + "이상문" + "')";
+
+        database.execSQL(free_consulting_comment_insert);
     }
 
     @Override

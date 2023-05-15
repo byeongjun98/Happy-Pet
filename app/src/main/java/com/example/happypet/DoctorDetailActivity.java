@@ -88,7 +88,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
         ReviewFragment reviewFragment = new ReviewFragment(dno);
         adapter.addItem(reviewFragment);
 
-        FreeConsultingFragment freeConsultingFragment = new FreeConsultingFragment();
+        FreeConsultingFragment freeConsultingFragment = new FreeConsultingFragment(doctor_name);
         adapter.addItem(freeConsultingFragment);
 
         pager.setAdapter(adapter);
