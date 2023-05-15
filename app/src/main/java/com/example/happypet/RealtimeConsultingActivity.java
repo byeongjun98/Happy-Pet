@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RealtimeConsultingActivity extends AppCompatActivity {
@@ -36,6 +37,9 @@ public class RealtimeConsultingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtime_consulting);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         realtime_back = findViewById(R.id.back_realtime);
         realtime_title = findViewById(R.id.realtime_title);

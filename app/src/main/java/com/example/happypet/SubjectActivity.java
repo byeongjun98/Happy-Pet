@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SubjectActivity extends AppCompatActivity implements BottomSheetDialog.BottomSheetListener {
@@ -28,6 +29,9 @@ public class SubjectActivity extends AppCompatActivity implements BottomSheetDia
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         database = DatabaseHelper.getDatabaseHelper(this).getWritableDatabase();
         subject_back = findViewById(R.id.subject_back);
