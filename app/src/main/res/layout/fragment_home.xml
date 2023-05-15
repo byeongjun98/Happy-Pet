@@ -192,9 +192,9 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/subject_entire"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/subject_entire"
                             android:layout_margin="15dp"
                             android:background="@drawable/border_layout_white"
                             android:orientation="vertical"
@@ -217,7 +217,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_margin="10dp"
                     android:background="@drawable/section_border"
                     android:orientation="vertical"
@@ -312,6 +311,87 @@
                         </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="#f7f7f7">
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="13dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="방금 올라온 질문"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="23dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="right">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:id="@+id/free_consulting_reset"
+                            android:src="@drawable/reset"
+                            android:layout_gravity="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="방금 전"
+                            android:textSize="17dp"
+                            android:layout_marginLeft="7dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:id="@+id/free_consulting_sroll"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:background="@drawable/border_bottom_line_layout"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/free_consulting_list"/>
+                    </LinearLayout>
+                </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/free_consulting_entire"
+                    android:padding="17dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="전체 질문 보기  >"
+                        android:textSize="18dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:background="#f7f7f7">
+
             </LinearLayout>
 
             <LinearLayout

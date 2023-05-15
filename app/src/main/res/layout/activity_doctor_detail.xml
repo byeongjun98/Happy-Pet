@@ -179,19 +179,40 @@
                         android:gravity="right"/>
                 </LinearLayout>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/border_bottom_line_layout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doctor_detail_text1"
+                    android:text="의사 상세"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:background="@drawable/border_bottom_line_black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doctor_detail_text2"
+                    android:text="후기"
+                    android:textSize="15dp"
+                    android:padding="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/doctor_detail_text3"
+                    android:text="무료 상담"
+                    android:textSize="15dp"
+                    android:padding="12dp"/>
+            </LinearLayout>
             <androidx.viewpager.widget.ViewPager
                 android:layout_width="match_parent"
                 android:layout_height="700dp"
-                android:id="@+id/pager"
-                android:layout_marginTop="17dp">
-                <androidx.viewpager.widget.PagerTitleStrip
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#55cedf"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp">
-
-                </androidx.viewpager.widget.PagerTitleStrip>
+                android:id="@+id/pager">
             </androidx.viewpager.widget.ViewPager>
         </LinearLayout>
     </ScrollView>

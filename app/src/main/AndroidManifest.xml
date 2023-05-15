@@ -60,6 +60,8 @@
         <activity android:name=".SubjectActivity"/>
         <activity android:name=".addCreditCard"/>
         <activity android:name=".DoctorDetailActivity"/>
+        <activity android:name=".FreeConsultingDetailActivity"/>
+        <activity android:name=".FreeConsultingListActivity"/>
 
     </application>
 

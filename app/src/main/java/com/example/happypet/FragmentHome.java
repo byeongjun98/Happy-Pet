@@ -1,5 +1,6 @@
 package com.example.happypet;
 
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,11 +8,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +40,12 @@ public class FragmentHome extends Fragment {
     LinearLayout[] infoLayout = new LinearLayout[4];
     RelativeLayout medicine, dentist, surgery, ophthalmology;
     RelativeLayout realtime_consulting, comprehensive_care;
-    LinearLayout subject_entire;
+    LinearLayout subject_entire, free_consulting_entire;
+    ScrollView free_consulting_sroll;
+
+    ImageView free_consulting_reset;
+    ListView free_consulting_list;
+    FreeConsultingAdapter adapter;
 
     int[] info_ino    = { R.id.ino1, R.id.ino2, R.id.ino3, R.id.ino4 };
     int[] info_id     = { R.id.info_id1, R.id.info_id2, R.id.info_id3, R.id.info_id4 };
@@ -94,11 +105,21 @@ public class FragmentHome extends Fragment {
 //        database.execSQL(insert_sql3);
 //        database.execSQL(insert_sql4);
 
+        free_consulting_sroll = rootView.findViewById(R.id.free_consulting_sroll);
+        free_consulting_sroll.post(new Runnable() {
+            @Override
+            public void run() {
+                free_consulting_sroll.smoothScrollBy(0, 800);
+            }
+        });
+
         init(rootView);
         selectAllInfo();
         setListener();
         doctor_input_test();
         doctor_review_input_test();
+        free_consulting_input_test();
+        select_free_consulting();
 
         return rootView;
     }
@@ -129,8 +150,14 @@ public class FragmentHome extends Fragment {
 
         realtime_consulting = rootView.findViewById(R.id.realtime_consulting);
         comprehensive_care = rootView.findViewById(R.id.comprehensive_care);
+        free_consulting_reset = rootView.findViewById(R.id.free_consulting_reset);
+        free_consulting_list = rootView.findViewById(R.id.free_consulting_list);
+        free_consulting_entire = rootView.findViewById(R.id.free_consulting_entire);
 
         subject_entire = rootView.findViewById(R.id.subject_entire);
+
+        adapter = new FreeConsultingAdapter(database);
+        free_consulting_list.setAdapter(adapter);
     }
 
     public void setListener() {
@@ -216,6 +243,30 @@ public class FragmentHome extends Fragment {
 
             }
         });
+
+        free_consulting_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate));
+                select_free_consulting();
+            }
+        });
+
+        free_consulting_list.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                free_consulting_sroll.requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        });
+
+        free_consulting_entire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), FreeConsultingListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void selectAllInfo() {
@@ -232,6 +283,30 @@ public class FragmentHome extends Fragment {
             Log.d("aaa", cursor.getInt(0) + "");
             i++;
         }
+    }
+
+    public void select_free_consulting() {
+        adapter.clear();
+
+        String selectFreeConsulting = "select * from free_consulting LIMIT 20";
+        Cursor cursor = database.rawQuery(selectFreeConsulting, null);
+
+        while(cursor.moveToNext()) {
+            int fno = cursor.getInt(0);
+            String p_id = cursor.getString(1);
+            String title = cursor.getString(2);
+            String question = cursor.getString(3);
+            String category = cursor.getString(4);
+            String image = cursor.getString(5);
+            String reg_date = cursor.getString(6);
+            int idx = reg_date.indexOf(' ');
+            reg_date = reg_date.substring(0, idx);
+
+            FreeConsultingData freeConsultingData = new FreeConsultingData(fno, p_id, title, question, category, image, reg_date);
+            adapter.addItem(freeConsultingData);
+        }
+
+        adapter.notifyDataSetChanged();
     }
 
     void doctor_input_test() {
@@ -272,6 +347,22 @@ public class FragmentHome extends Fragment {
                     + " values "
                     + " (" + dno + ", '" + star_rating +"', '" + review_content[idx] + "')";
             database.execSQL(doctor_review_insert);
+        }
+    }
+
+    void free_consulting_input_test() {
+        String free_consulting_delete = "delete from free_consulting";
+        database.execSQL(free_consulting_delete);
+
+        for(int i=0; i<10; i++) {
+            int idx = (int)(Math.random() * subject_test.length);
+
+            String free_consulting_insert = "insert into " + "free_consulting"
+                    + "(p_id, title, question, category, image) "
+                    + " values "
+                    + " ('" + "aaa" + "', '" + "궁금해요" +"', '" + "~가 궁금해서 물어봅니다." + "', '" + subject_test[idx] + "', '" + "asdasd" + "')";
+
+            database.execSQL(free_consulting_insert);
         }
     }
 

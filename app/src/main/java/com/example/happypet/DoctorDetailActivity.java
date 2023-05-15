@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -30,6 +33,8 @@ public class DoctorDetailActivity extends AppCompatActivity {
     RatingBar doctor_detail_rating;
     ViewPager pager;
 
+    TextView[] doctor_detail_text = new TextView[3];
+
     int dno, customer_num;
 
     @Override
@@ -50,6 +55,10 @@ public class DoctorDetailActivity extends AppCompatActivity {
         doctor_detail_add_doctor      = findViewById(R.id.doctor_detail_add_doctor);
         doctor_detail_reg_doctor      = findViewById(R.id.doctor_detail_reg_doctor);
         doctor_detail_review_cnt      = findViewById(R.id.doctor_detail_review_cnt);
+        doctor_detail_text[0]         = findViewById(R.id.doctor_detail_text1);
+        doctor_detail_text[1]         = findViewById(R.id.doctor_detail_text2);
+        doctor_detail_text[2]         = findViewById(R.id.doctor_detail_text3);
+
 
         Intent intent = getIntent();
         dno = intent.getIntExtra("dno", 0);
@@ -124,6 +133,42 @@ public class DoctorDetailActivity extends AppCompatActivity {
                 database.execSQL(update_customer_num);
             }
         });
+
+        for(int i=0; i<doctor_detail_text.length; i++) {
+            final int idx = i;
+            doctor_detail_text[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    for(int j=0; j<doctor_detail_text.length; j++) {
+                        doctor_detail_text[j].setTextColor(Color.parseColor("#9F9F9F"));
+                        doctor_detail_text[j].setBackground(null);
+                        doctor_detail_text[j].setTypeface(null, Typeface.NORMAL);
+                    }
+                    doctor_detail_text[idx].setTextColor(Color.parseColor("#000000"));
+                    doctor_detail_text[idx].setBackgroundResource(R.drawable.border_bottom_line_black);
+                    doctor_detail_text[idx].setTypeface(null, Typeface.BOLD);
+
+                    pager.setCurrentItem(idx);
+                }
+            });
+        }
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                doctor_detail_text[position].performClick();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
     int select_customer_num_cnt(int dno) {
@@ -162,24 +207,6 @@ public class DoctorDetailActivity extends AppCompatActivity {
             return items.size();
         }
 
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            String title = "";
 
-            switch (position) {
-                case 0:
-                    title = "의사상세";
-                    break;
-                case 1:
-                    title = "후기";
-                    break;
-                case 2:
-                    title = "무료 상담";
-                    break;
-            }
-
-            return title;
-        }
     }
 }

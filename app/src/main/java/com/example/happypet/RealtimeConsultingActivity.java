@@ -138,6 +138,23 @@ public class RealtimeConsultingActivity extends AppCompatActivity {
                 String content = realtime_content.getText().toString();
                 String category = realtime_spinner.getSelectedItem().toString();
 
+                switch(category) {
+                    case "내과":
+                        category = "medicine";
+                        break;
+                    case "치과":
+                        category = "dentist";
+                        break;
+                    case "외과":
+                        category = "surgery";
+                        break;
+                    case "안과":
+                        category = "ophthalmology";
+                        break;
+                    default:
+                        category = "기타";
+                }
+
 //                String realtime_insert = "insert into " + "free_consulting"
 //                        + "(p_id, title, question, category, img) "
 //                        + " values "
@@ -145,14 +162,13 @@ public class RealtimeConsultingActivity extends AppCompatActivity {
 //                        + "";
 
                 String realtime_insert = "insert into " + "free_consulting"
-                        + "(p_id, title, question, category, img) "
+                        + "(p_id, title, question, category, image) "
                         + " values "
                         + " ('" + "aaa" + "', '" + title + "', '" + content + "', '" + category + "', '" + "asd" + "')"
                         + "";
 
                 database.execSQL(realtime_insert);
 
-                Toast.makeText(RealtimeConsultingActivity.this, "등록 성공", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

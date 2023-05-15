@@ -76,6 +76,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " image text, " +
                 " reg_date timestamp default current_timestamp)";
 
+        String free_consulting_comment_create_sql = "create table if not exists free_consulting_comment(" +
+                " fcno integer PRIMARY KEY autoincrement, " +
+                " fno integer, " +
+                " comment text, " +
+                " commenter text, " +
+                " reg_date timestamp default current_timestamp)";
+
         String credit_create_sql = "create table if not exists credit(" +
                 " card_number text PRIMARY KEY , " +
                 " card_password text, " +
@@ -94,6 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(doctor_create_sql);
         sqLiteDatabase.execSQL(doctor_review_create_sql);
         sqLiteDatabase.execSQL(free_consulting_create_sql);
+        sqLiteDatabase.execSQL(free_consulting_comment_create_sql);
         sqLiteDatabase.execSQL(credit_create_sql);
         sqLiteDatabase.execSQL(my_info_sql);
 
