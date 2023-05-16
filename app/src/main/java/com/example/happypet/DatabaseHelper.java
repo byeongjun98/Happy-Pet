@@ -95,6 +95,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " user_tel text, " +
                 " user_birth text)";
 
+        String review_sql ="create table if not exists review(" +
+                " review_title text PRIMARY KEY, " +
+                " review_main text, " +
+                " name text, " +
+                " hospital text, " +
+                " star_rating text, " +
+                " reg_date timestamp default current_timestamp)";
+
         sqLiteDatabase.execSQL(user_create_sql);
         sqLiteDatabase.execSQL(information_create_sql);
         sqLiteDatabase.execSQL(comment_create_sql);
@@ -104,6 +112,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(free_consulting_comment_create_sql);
         sqLiteDatabase.execSQL(credit_create_sql);
         sqLiteDatabase.execSQL(my_info_sql);
+        sqLiteDatabase.execSQL(review_sql);
 
         Log.d("database exec", "데이터베이스 실행");
     }

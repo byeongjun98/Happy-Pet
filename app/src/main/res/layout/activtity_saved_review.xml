@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="의사 이름"
+        android:padding="15dp"
+        android:textSize="20dp"
+        android:id="@+id/riview_detail_doctor_name"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="병원 이름"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:id="@+id/riview_detail_hospital_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="제목"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:textSize="30dp"
+        android:id="@+id/riview_after_care_title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="진료내용"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:textSize="30dp"
+        android:id="@+id/riview_after_care_main"
+        />
+
+
+</LinearLayout>
