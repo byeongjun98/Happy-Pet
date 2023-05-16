@@ -1,82 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<!-- activity_main.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
-    <LinearLayout
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textStyle="bold"
-                android:layout_weight="1"
-                android:text="공지사항"
-                android:textSize="25dp" />
-        </RelativeLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-
-
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="notice"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:textColor="#ffffff"
-            android:id="@+id/noticeText"
-            android:drawableStart="@drawable/baseline_textsms_24"
-            android:drawableLeft="@drawable/baseline_textsms_24"
-            android:background="@color/black"
-            android:textStyle="bold"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/black">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="gakari"
-                android:layout_gravity="center"
-                android:padding="3dp"
-                android:layout_marginLeft="8dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:id="@+id/nameText"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="2017-01-01"
-                android:layout_gravity="center"
-                android:padding="3dp"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:id="@+id/dateText"
-                />
-        </LinearLayout>
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
