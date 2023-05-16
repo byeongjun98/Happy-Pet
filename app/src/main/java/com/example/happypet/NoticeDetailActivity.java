@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NoticeDetailActivity extends AppCompatActivity {
@@ -16,6 +17,10 @@ public class NoticeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_detail);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
 
         textTitle = findViewById(R.id.textTitle);
         textContent = findViewById(R.id.textContent);
