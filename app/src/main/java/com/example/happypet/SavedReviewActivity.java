@@ -1,12 +1,16 @@
 package com.example.happypet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SavedReviewActivity extends AppCompatActivity {
@@ -20,6 +24,9 @@ public class SavedReviewActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activtity_saved_review);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
@@ -37,7 +44,13 @@ public class SavedReviewActivity extends AppCompatActivity {
         riview_after_care_title.setText(title);
         riview_after_care_main.setText(main);
 
-
+        Button button = findViewById(R.id.close);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
 
     }
