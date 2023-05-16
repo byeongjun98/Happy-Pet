@@ -14,8 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class InfoDetailActivity extends Activity {
+public class InfoDetailActivity extends AppCompatActivity {
     ImageButton backInfoDetail, comment_btn;
     EditText comment_edt;
     TextView infoDetailTitle, infoDetailIdDate, infoDetailContent, commentCnt;
@@ -30,6 +32,9 @@ public class InfoDetailActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_detail);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         database = DatabaseHelper.getDatabaseHelper(this).getWritableDatabase();
 

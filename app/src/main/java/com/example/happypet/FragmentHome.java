@@ -67,28 +67,6 @@ public class FragmentHome extends Fragment {
 
     String[] subject_test = { "medicine", "dentist", "surgery", "ophthalmology" };
 
-    Thread th1 = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            int position = 0;
-            while(true) {
-                try {
-                    Thread.sleep(3000);
-                    position += 1;
-
-                    if(position >= 10) {
-                        position = 0;
-                    }
-                    free_consulting_list.smoothScrollToPosition(position);
-
-                } catch (InterruptedException e) {
-                    position = 0;
-                }
-            }
-
-        }
-    });
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -143,8 +121,6 @@ public class FragmentHome extends Fragment {
         free_consulting_input_test();
         select_free_consulting();
         free_consulting_comment_input_test();
-
-        th1.start();
 
         return rootView;
     }
@@ -265,7 +241,8 @@ public class FragmentHome extends Fragment {
         comprehensive_care.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), ComprehensiveActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -275,7 +252,6 @@ public class FragmentHome extends Fragment {
                 view.startAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate));
                 select_free_consulting();
                 free_consulting_list.smoothScrollToPosition(0);
-                th1.interrupt();
             }
         });
 
