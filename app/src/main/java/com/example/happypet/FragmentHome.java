@@ -393,6 +393,23 @@ public class FragmentHome extends Fragment {
         String free_consulting_delete = "delete from free_consulting";
         database.execSQL(free_consulting_delete);
 
+        String free_consulting_insert2 = "insert into " + "free_consulting"
+                + "(p_id, title, question, category, image) "
+                + " values "
+                + " ('" + "ㅇㅇ" + "', '" + "자주토해요" +"', '" + "고양이가 헤어블을 자주 토해요. 어떡할까요?" + "', '" + "medicine" + "', '" + "asdasd" + "')";
+        String free_consulting_insert3 = "insert into " + "free_consulting"
+                + "(p_id, title, question, category, image) "
+                + " values "
+                + " ('" + "미니니" + "', '" + "강아지 건강검진" +"', '" + "강아지 건강검진 비용이 얼마나 들까요?" + "', '" + "etc" + "', '" + "asdasd" + "')";
+        String free_consulting_insert4 = "insert into " + "free_consulting"
+                + "(p_id, title, question, category, image) "
+                + " values "
+                + " ('" + "호두맘" + "', '" + "슬개골 탈골" +"', '" + "강아지 슬개골 탈구 인 것 같아요. ㅠㅠ" + "', '" + "surgery" + "', '" + "asdasd" + "')";
+
+        database.execSQL(free_consulting_insert2);
+        database.execSQL(free_consulting_insert3);
+        database.execSQL(free_consulting_insert4);
+
         for(int i=0; i<10; i++) {
             int idx = (int)(Math.random() * subject_test.length);
 
@@ -403,6 +420,8 @@ public class FragmentHome extends Fragment {
 
             database.execSQL(free_consulting_insert);
         }
+
+
     }
 
     void free_consulting_comment_input_test() {

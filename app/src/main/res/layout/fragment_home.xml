@@ -472,8 +472,7 @@
                             android:id="@+id/infoLayout2"
                             android:orientation="vertical"
                             android:layout_weight="1"
-                            android:padding="15dp"
-                            android:background="@drawable/border_layout_white">
+                            android:padding="15dp">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -484,7 +483,8 @@
                                 android:layout_height="150dp"
                                 android:id="@+id/home_img2"
                                 android:src="@drawable/image2"
-                                android:scaleType="fitXY"/>
+                                android:scaleType="fitXY"
+                                android:background="@drawable/border_layout_white"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
