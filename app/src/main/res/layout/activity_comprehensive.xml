@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text="구토, 이물질 섭취, 설사"
                 android:textSize="15dp"/>
         </LinearLayout>
 
@@ -128,7 +128,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text="치아 , 잇몸"
                 android:textSize="15dp"/>
         </LinearLayout>
 
@@ -194,7 +194,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text="안구, 충혈 증세, 눈물 예방"
                 android:textSize="15dp"/>
         </LinearLayout>
 
