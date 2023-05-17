@@ -446,7 +446,10 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:src="@drawable/brain"/>
+                                android:id="@+id/home_img1"
+                                android:src="@drawable/image1"
+                                android:scaleType="fitXY"
+                                android:background="@drawable/border_image_round"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -479,7 +482,9 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:src="@drawable/brain"/>
+                                android:id="@+id/home_img2"
+                                android:src="@drawable/image2"
+                                android:scaleType="fitXY"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -516,7 +521,10 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:src="@drawable/brain"/>
+                                android:id="@+id/home_img3"
+                                android:src="@drawable/image3"
+                                android:scaleType="fitXY"
+                                android:background="@drawable/border_image_round"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -549,7 +557,9 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:src="@drawable/brain"/>
+                                android:id="@+id/home_img4"
+                                android:src="@drawable/image4"
+                                android:scaleType="fitXY"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

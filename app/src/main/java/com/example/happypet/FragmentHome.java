@@ -36,6 +36,7 @@ public class FragmentHome extends Fragment {
     TextView[] info_ino_textView = new TextView[4];
     TextView[] info_title_textView = new TextView[4];
     TextView[] info_id_textView = new TextView[4];
+    ImageView[] home_img = new ImageView[4];
     TextView moreInfo;
     LinearLayout[] infoLayout = new LinearLayout[4];
     RelativeLayout medicine, dentist, surgery, ophthalmology;
@@ -51,6 +52,8 @@ public class FragmentHome extends Fragment {
     int[] info_id     = { R.id.info_id1, R.id.info_id2, R.id.info_id3, R.id.info_id4 };
     int[] info_title  = { R.id.info_title1, R.id.info_title2, R.id.info_title3, R.id.info_title4 };
     int[] info_layout = { R.id.infoLayout1, R.id.infoLayout2, R.id.infoLayout3, R.id.infoLayout4 };
+    int[] info_image  = { R.id.home_img1, R.id.home_img2, R.id.home_img3, R.id.home_img4, };
+    int[] image       = { R.drawable.img1, R.drawable.img1, R.drawable.img1, R.drawable.img1, };
 
     String[] review_content = {
             "친절하게 설명해주셨어요~",
@@ -114,8 +117,10 @@ public class FragmentHome extends Fragment {
         });
 
         init(rootView);
+        info_input_test();
         selectAllInfo();
         setListener();
+
         doctor_input_test();
         doctor_review_input_test();
         free_consulting_input_test();
@@ -140,6 +145,10 @@ public class FragmentHome extends Fragment {
 
         for(int i=0; i<infoLayout.length; i++) {
             infoLayout[i] = rootView.findViewById(info_layout[i]);
+        }
+
+        for(int i=0; i<info_image.length; i++) {
+            home_img[i] = rootView.findViewById(info_image[i]);
         }
 
         moreInfo = rootView.findViewById(R.id.moreInfo);
@@ -270,6 +279,33 @@ public class FragmentHome extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+
+    public void info_input_test() {
+        String delete_info = "delete from information";
+        database.execSQL(delete_info);
+
+
+        String info_input1 = "insert into information"
+                + "(p_id, title, content, category) "
+                + " values "
+                + " ('" + "냥집사', " + "'사료 추천드려요', " + "'건식사료 적극추천', '" + "cat')";
+        String info_input2 = "insert into information"
+                + "(p_id, title, content, category) "
+                + " values "
+                + " ('" + "초코', " + "'강아지 안경 ㅎㅎ', " + "'요즘 강아지 스타일~', '" + "dog')";
+        String info_input3 = "insert into information"
+                + "(p_id, title, content, category) "
+                + " values "
+                + " ('" + "정글리안', " + "'잠들려는 햄스터', " + "'톱밥을 바꾸더니 편안해짐', '" + "etc')";
+        String info_input4 = "insert into information"
+                + "(p_id, title, content, category) "
+                + " values "
+                + " ('" + "냥집사', " + "'캣타워가 생겼어요~', " + "'한살인생 처음으로 캣타워가 생겼어요!', '" + "cat')";
+        database.execSQL(info_input1);
+        database.execSQL(info_input2);
+        database.execSQL(info_input3);
+        database.execSQL(info_input4);
     }
 
     public void selectAllInfo() {
