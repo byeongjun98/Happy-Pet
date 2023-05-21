@@ -114,6 +114,12 @@ public class InfoListActivity extends Activity {
         infoWrite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(SaveSharedPreference.getUserName(InfoListActivity.this).length() == 0) {
+                    Intent intent = new Intent(InfoListActivity.this, LoginFormActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+
                 Intent intent = new Intent(getApplication(), InfoWriteActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.activity_slide_anim, R.anim.activity_none);

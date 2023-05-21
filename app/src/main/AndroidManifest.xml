@@ -65,6 +65,9 @@
         <activity android:name=".NoticeDetailActivity"/>
         <activity android:name=".ComprehensiveActivity"/>
         <activity android:name=".SavedReviewActivity"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".LoginFormActivity"/>
+        <activity android:name=".UserFindActivity"/>
 
 
     </application>

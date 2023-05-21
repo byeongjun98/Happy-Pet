@@ -44,6 +44,7 @@
                     <ImageButton
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:id="@+id/home_user"
                         android:layout_margin="6dp"
                         android:src="@drawable/user"
                         android:scaleType="fitXY"

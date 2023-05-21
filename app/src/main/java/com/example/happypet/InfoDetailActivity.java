@@ -107,6 +107,12 @@ public class InfoDetailActivity extends AppCompatActivity {
         comment_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(SaveSharedPreference.getUserName(InfoDetailActivity.this).length() == 0) {
+                    Intent intent = new Intent(InfoDetailActivity.this, LoginFormActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+
                 String comment = comment_edt.getText().toString();
                 if(comment.equals("") || comment == null) {
                     Toast.makeText(InfoDetailActivity.this, "댓글을 입력해주세요!", Toast.LENGTH_SHORT).show();

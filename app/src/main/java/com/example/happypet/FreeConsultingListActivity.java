@@ -53,6 +53,12 @@ public class FreeConsultingListActivity extends AppCompatActivity {
         fc_list_question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(SaveSharedPreference.getUserName(FreeConsultingListActivity.this).length() == 0) {
+                    Intent intent = new Intent(FreeConsultingListActivity.this, LoginFormActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+
                 Intent intent = new Intent(FreeConsultingListActivity.this, RealtimeConsultingActivity.class);
                 startActivity(intent);
             }

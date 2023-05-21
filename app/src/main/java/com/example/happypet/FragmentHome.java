@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -33,6 +34,7 @@ public class FragmentHome extends Fragment {
     DatabaseHelper dbHelper;
     SQLiteDatabase database;
 
+    ImageButton home_user;
     TextView[] info_ino_textView = new TextView[4];
     TextView[] info_title_textView = new TextView[4];
     TextView[] info_id_textView = new TextView[4];
@@ -151,6 +153,7 @@ public class FragmentHome extends Fragment {
             home_img[i] = rootView.findViewById(info_image[i]);
         }
 
+        home_user = rootView.findViewById(R.id.home_user);
         moreInfo = rootView.findViewById(R.id.moreInfo);
 
         medicine = rootView.findViewById(R.id.medicine);
@@ -171,6 +174,17 @@ public class FragmentHome extends Fragment {
     }
 
     public void setListener() {
+        home_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(SaveSharedPreference.getUserName(getContext()).length() == 0) {
+                    Intent intent = new Intent(getContext(), LoginFormActivity.class);
+                    getContext().startActivity(intent);
+                }
+
+            }
+        });
+
         moreInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,6 +256,12 @@ public class FragmentHome extends Fragment {
         realtime_consulting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(SaveSharedPreference.getUserName(getContext()).length() == 0) {
+                    Intent intent = new Intent(getContext(), LoginFormActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+
                 Intent intent = new Intent(getContext(), RealtimeConsultingActivity.class);
                 getContext().startActivity(intent);
             }
@@ -261,6 +281,7 @@ public class FragmentHome extends Fragment {
                 view.startAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate));
                 select_free_consulting();
                 free_consulting_list.smoothScrollToPosition(0);
+                free_consulting_list.setSelect;
             }
         });
 
