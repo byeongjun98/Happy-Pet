@@ -20,7 +20,9 @@
                 android:layout_weight="1"
                 android:text="내가 쓴 후기"
                 android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
         </RelativeLayout>
     </LinearLayout>
 

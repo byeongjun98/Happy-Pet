@@ -14,21 +14,23 @@
         android:id="@+id/riview_detail_hospital_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aaaaaaaaaaaaaa"
         android:hint="병원 이름"
         android:textSize="25dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/riview_detail_doctor_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:fontFamily="@font/aaaaaaaaaaaaaa"
         android:layout_marginLeft="20dp"
         android:hint="의사 이름"
         android:textSize="25dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        />
 </LinearLayout>
 
 
@@ -48,29 +50,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/aaaaaaaaaaaaaa"
             android:text="제목 :"
-            android:textColor="@color/black"
-            android:textSize="35dp"
-            android:layout_marginLeft="3dp"/>
+            android:textSize="18dp"
+            android:layout_marginBottom="23dp"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/riview_after_care_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="제목"
-            android:textColor="@color/black"
-            android:textSize="35dp"
-            android:fontFamily="@font/aaaaaaaaaaaaaa"
-            android:layout_marginLeft="5dp"/>
+            android:textSize="18dp"
+            android:layout_marginBottom="23dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="진료내용"
-        android:fontFamily="@font/aaaaaaaaaaaaaa"
-        android:textSize="30dp"
+        android:textSize="18dp"
+        android:layout_marginBottom="23dp"
         android:id="@+id/riview_after_care_main"
         android:textColor="@color/black"
         android:layout_marginLeft="5dp"
@@ -84,7 +86,8 @@
         android:text="닫기"
         android:background="@color/white"
         android:layout_margin="2dp"
-        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginBottom="23dp"
         />
 
 
