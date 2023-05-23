@@ -281,7 +281,6 @@ public class FragmentHome extends Fragment {
                 view.startAnimation(AnimationUtils.loadAnimation(view.getContext(), R.anim.rotate));
                 select_free_consulting();
                 free_consulting_list.smoothScrollToPosition(0);
-                free_consulting_list.setSelect;
             }
         });
 
@@ -308,21 +307,21 @@ public class FragmentHome extends Fragment {
 
 
         String info_input1 = "insert into information"
-                + "(p_id, title, content, category) "
+                + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "냥집사', " + "'사료 추천드려요', " + "'건식사료 적극추천', '" + "cat')";
+                + " ('" + "냥집사', " + "'사료 추천드려요', " + "'건식사료 적극추천', '" + "cat" + "', '" +"aaa" + "')";
         String info_input2 = "insert into information"
-                + "(p_id, title, content, category) "
+                + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "초코', " + "'강아지 안경 ㅎㅎ', " + "'요즘 강아지 스타일~', '" + "dog')";
+                + " ('" + "초코', " + "'강아지 안경 ㅎㅎ', " + "'요즘 강아지 스타일~', '" + "dog" + "', '" +"aaa" + "')";
         String info_input3 = "insert into information"
-                + "(p_id, title, content, category) "
+                + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "정글리안', " + "'잠들려는 햄스터', " + "'톱밥을 바꾸더니 편안해짐', '" + "etc')";
+                + " ('" + "정글리안', " + "'잠들려는 햄스터', " + "'톱밥을 바꾸더니 편안해짐', '" + "etc" + "', '" +"aaa" + "')";
         String info_input4 = "insert into information"
-                + "(p_id, title, content, category) "
+                + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "냥집사', " + "'캣타워가 생겼어요~', " + "'한살인생 처음으로 캣타워가 생겼어요!', '" + "cat')";
+                + " ('" + "냥집사', " + "'캣타워가 생겼어요~', " + "'한살인생 처음으로 캣타워가 생겼어요!', '" + "cat" + "', '" +"aaa" + "')";
         database.execSQL(info_input1);
         database.execSQL(info_input2);
         database.execSQL(info_input3);

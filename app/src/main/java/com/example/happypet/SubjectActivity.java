@@ -120,6 +120,7 @@ public class SubjectActivity extends AppCompatActivity implements BottomSheetDia
             case "거리순":
                 break;
             case "후기많은순":
+                select_sort_review();
                 break;
             case "별점많은순":
                 select_sort("star_rating");
@@ -148,6 +149,10 @@ public class SubjectActivity extends AppCompatActivity implements BottomSheetDia
 
             doctorAdapter.notifyDataSetChanged();
         }
+    }
+
+    void select_sort_review() {
+
     }
 
     @Override

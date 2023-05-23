@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ public class InfoDetailActivity extends AppCompatActivity {
     ImageButton backInfoDetail, comment_btn;
     EditText comment_edt;
     TextView infoDetailTitle, infoDetailIdDate, infoDetailContent, commentCnt;
+    ImageView info_detail_img;
     ListView comment_list;
     SQLiteDatabase database;
 
@@ -46,6 +48,7 @@ public class InfoDetailActivity extends AppCompatActivity {
         comment_edt = findViewById(R.id.comment_edt);
         comment_list = findViewById(R.id.comment_list);
         commentCnt = findViewById(R.id.comment_cnt);
+        info_detail_img = findViewById(R.id.info_detail_img);
 
         commentAdapter = new CommentAdapter(database);
         comment_list.setAdapter(commentAdapter);
