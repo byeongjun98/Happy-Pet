@@ -3,6 +3,7 @@ package com.example.happypet;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,8 +55,18 @@ public class FreeConsultingAdapter extends BaseAdapter {
         TextView free_consulting_answer = view.findViewById(R.id.free_consulting_answer);
         ImageView free_consulting_img = view.findViewById(R.id.free_consulting_img);
 
+
+
         FreeConsultingData freeConsultingData = items.get(i);
         String category = freeConsultingData.getCategory();
+
+        String select_free_consulting_comment = "select * from free_consulting_comment where fno = " + freeConsultingData.getFno();
+        Cursor cursor = sqLiteDatabase.rawQuery(select_free_consulting_comment, null);
+        if(cursor.getCount() > 0) {
+            free_consulting_answer.setTextColor(Color.parseColor("#E3942F"));
+            free_consulting_answer.setBackgroundColor(Color.parseColor("#FFF7EA"));
+            free_consulting_answer.setText("답변 완료");
+        }
 
         switch(category) {
             case "medicine":

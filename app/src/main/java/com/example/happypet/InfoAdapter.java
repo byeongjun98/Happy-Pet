@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -53,12 +54,32 @@ public class InfoAdapter extends BaseAdapter {
         TextView title = view.findViewById(R.id.info_item_title);
         TextView idDate = view.findViewById(R.id.info_item_id_date);
         TextView commentCnt = view.findViewById(R.id.info_detail_comment_cnt);
+        ImageView info_item_img = view.findViewById(R.id.info_item_img);
 
         InfoData infoData = items.get(i);
+
+        String img = infoData.getImg();
 
         title.setText(infoData.getTitle());
         idDate.setText(infoData.getP_id() + "   " + infoData.getMk_date());
 
+        if(img.length() != 0 || img != null) {
+            info_item_img.setVisibility(View.VISIBLE);
+            switch (img) {
+                case "image1":
+                    info_item_img.setImageResource(R.drawable.image1);
+                    break;
+                case "image2":
+                    info_item_img.setImageResource(R.drawable.image2);
+                    break;
+                case "image3":
+                    info_item_img.setImageResource(R.drawable.image3);
+                    break;
+                case "image4":
+                    info_item_img.setImageResource(R.drawable.image4);
+                    break;
+            }
+        }
         String selectAllComment = "select * from comment where ino=" + infoData.getIno();
         Cursor cursor = sqLiteDatabase.rawQuery(selectAllComment, null);
 

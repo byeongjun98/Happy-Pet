@@ -309,19 +309,19 @@ public class FragmentHome extends Fragment {
         String info_input1 = "insert into information"
                 + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "냥집사', " + "'사료 추천드려요', " + "'건식사료 적극추천', '" + "cat" + "', '" +"aaa" + "')";
+                + " ('" + "냥집사', " + "'사료 추천드려요', " + "'건식사료 적극추천', '" + "cat" + "', '" +"image1" + "')";
         String info_input2 = "insert into information"
                 + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "초코', " + "'강아지 안경 ㅎㅎ', " + "'요즘 강아지 스타일~', '" + "dog" + "', '" +"aaa" + "')";
+                + " ('" + "초코', " + "'강아지 안경 ㅎㅎ', " + "'요즘 강아지 스타일~', '" + "dog" + "', '" +"image2" + "')";
         String info_input3 = "insert into information"
                 + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "정글리안', " + "'잠들려는 햄스터', " + "'톱밥을 바꾸더니 편안해짐', '" + "etc" + "', '" +"aaa" + "')";
+                + " ('" + "정글리안', " + "'잠들려는 햄스터', " + "'톱밥을 바꾸더니 편안해짐', '" + "etc" + "', '" +"image3" + "')";
         String info_input4 = "insert into information"
                 + "(p_id, title, content, category, img) "
                 + " values "
-                + " ('" + "냥집사', " + "'캣타워가 생겼어요~', " + "'한살인생 처음으로 캣타워가 생겼어요!', '" + "cat" + "', '" +"aaa" + "')";
+                + " ('" + "냥집사', " + "'캣타워가 생겼어요~', " + "'한살인생 처음으로 캣타워가 생겼어요!', '" + "cat" + "', '" +"image4" + "')";
         database.execSQL(info_input1);
         database.execSQL(info_input2);
         database.execSQL(info_input3);
@@ -369,6 +369,13 @@ public class FragmentHome extends Fragment {
     }
 
     void doctor_input_test() {
+        String[] name = { "이상문", "박병준", "김경민", "신기범", "임경재", "박기석", "이대근", "박광규", "신용준", "홍주의",
+                            "홍주의", "윤정연", "김승훈", "이정철", "오현숙", "이민우", "홍인표", "이재민", "신상훈", "신용준"};
+        String[] hospital = { "논현동물병원", "커비 동물병원", "소영병원", "라파엘 종합 동물병원", "그레이스동물병원",
+                                "순수동물병원", "충현동물종합병원", "24시 닥터박 동물병원", "24시예스동물병원", "중앙동물메디컬센터",
+                                "에이드 동물병원", "강남 25시동물병원", "ABC동물병원", "하나카동물병원", "츄동물병원",
+                                "리즈 동물병원", "강남서초 동물병원", "가로수 동물병원", "아이힐동물병원", "헬릭스 동물메디컬센터"};
+
         String doctor_delete = "delete from doctor";
 
         database.execSQL(doctor_delete);
@@ -380,7 +387,7 @@ public class FragmentHome extends Fragment {
             String doctor_insert = "insert into " + "doctor"
                     + "(name, star_rating, subject, hospital, customer_num) "
                     + " values "
-                    + " ('" + "이상문', '" + star_rating +"', " + "'"+ subject_test[idx] + "', " + "'원주시내병원', " + 100 +")";
+                    + " ('" + name[i] + "', '" + star_rating +"', " + "'"+ subject_test[idx] + "', '" + hospital[i] + "', " + 100 +")";
 
             database.execSQL(doctor_insert);
         }
@@ -430,16 +437,16 @@ public class FragmentHome extends Fragment {
         database.execSQL(free_consulting_insert3);
         database.execSQL(free_consulting_insert4);
 
-        for(int i=0; i<10; i++) {
-            int idx = (int)(Math.random() * subject_test.length);
-
-            String free_consulting_insert = "insert into " + "free_consulting"
-                    + "(p_id, title, question, category, image) "
-                    + " values "
-                    + " ('" + "aaa" + "', '" + "궁금해요" +"', '" + "~가 궁금해서 물어봅니다." + "', '" + subject_test[idx] + "', '" + "asdasd" + "')";
-
-            database.execSQL(free_consulting_insert);
-        }
+//        for(int i=0; i<10; i++) {
+//            int idx = (int)(Math.random() * subject_test.length);
+//
+//            String free_consulting_insert = "insert into " + "free_consulting"
+//                    + "(p_id, title, question, category, image) "
+//                    + " values "
+//                    + " ('" + "aaa" + "', '" + "궁금해요" +"', '" + "~가 궁금해서 물어봅니다." + "', '" + subject_test[idx] + "', '" + "asdasd" + "')";
+//
+//            database.execSQL(free_consulting_insert);
+//        }
 
 
     }
@@ -451,7 +458,9 @@ public class FragmentHome extends Fragment {
         String free_consulting_comment_insert = "insert into " + "free_consulting_comment"
                 + "(fno, comment, commenter) "
                 + " values "
-                + " (" + 1 + ", '" + "그러면 안되요~" +"', '" + "이상문" + "')";
+                + " (" + 1 + ", '" + "고양이 대부분은 헤어볼을 상당히 힘겹게 토해냅니다. 염증이나 심각한 질병이 발생할 수 있습니다. " +
+                "헤어볼이 장을 막아 장폐색이 발생해 고양이가 폐사할 수도 있습니다. " +
+                "그러한 증상이 한달에서 두달정도 지속된다면 질병을 의심해 동물병원을 방문하는 것이 좋습니다." +"', '" + "김경민" + "')";
 
         database.execSQL(free_consulting_comment_insert);
     }

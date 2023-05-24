@@ -73,6 +73,24 @@ public class InfoDetailActivity extends AppCompatActivity {
         date = date.substring(0, date.indexOf(' '));
         infoDetailTitle.setText(cursor.getString(2));
         infoDetailContent.setText(cursor.getString(3));
+        String img = cursor.getString(5);
+        if(img.length() != 0 || img != null) {
+            info_detail_img.setVisibility(View.VISIBLE);
+            switch (img) {
+                case "image1":
+                    info_detail_img.setImageResource(R.drawable.image1);
+                    break;
+                case "image2":
+                    info_detail_img.setImageResource(R.drawable.image2);
+                    break;
+                case "image3":
+                    info_detail_img.setImageResource(R.drawable.image3);
+                    break;
+                case "image4":
+                    info_detail_img.setImageResource(R.drawable.image4);
+                    break;
+            }
+        }
         infoDetailIdDate.setText(cursor.getString(1) + "   " + date);
     }
 

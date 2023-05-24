@@ -130,7 +130,7 @@ public class InfoListActivity extends Activity {
     void selectAll_information() {
         infoAdapter.clear();
 
-        String selectAllInfo = "select * from information";
+        String selectAllInfo = "select * from information order by mk_date desc";
         Cursor cursor = database.rawQuery(selectAllInfo, null);
 
         while(cursor.moveToNext()) {
@@ -138,11 +138,12 @@ public class InfoListActivity extends Activity {
             String p_id = cursor.getString(1);
             String title = cursor.getString(2);
             String content = cursor.getString(3);
+            String img = cursor.getString(5);
             String mk_date = cursor.getString(6);
             int idx = mk_date.indexOf(' ');
             mk_date = mk_date.substring(0, idx);
 
-            InfoData infoData = new InfoData(ino, p_id, title, content, mk_date);
+            InfoData infoData = new InfoData(ino, p_id, title, content, img, mk_date);
             infoAdapter.addItem(infoData);
 
             infoAdapter.notifyDataSetChanged();
@@ -160,11 +161,12 @@ public class InfoListActivity extends Activity {
             String p_id = cursor.getString(1);
             String title = cursor.getString(2);
             String content = cursor.getString(3);
+            String img = cursor.getString(5);
             String mk_date = cursor.getString(6);
             int idx = mk_date.indexOf(' ');
             mk_date = mk_date.substring(0, idx);
 
-            InfoData infoData = new InfoData(ino, p_id, title, content, mk_date);
+            InfoData infoData = new InfoData(ino, p_id, title, content, img, mk_date);
             infoAdapter.addItem(infoData);
 
             infoAdapter.notifyDataSetChanged();

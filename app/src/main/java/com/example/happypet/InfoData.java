@@ -9,11 +9,12 @@ public class InfoData {
     String img;
     String mk_date;
 
-    public InfoData(int ino, String p_id, String title, String content, String mk_date) {
+    public InfoData(int ino, String p_id, String title, String content, String img, String mk_date) {
         this.ino = ino;
         this.p_id = p_id;
         this.title = title;
         this.content = content;
+        this.img = img;
         this.mk_date = mk_date;
     }
 

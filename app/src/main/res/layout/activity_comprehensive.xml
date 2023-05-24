@@ -161,7 +161,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="..."
+                android:text="골절, 슬개골 탈구"
                 android:textSize="15dp"/>
         </LinearLayout>
 

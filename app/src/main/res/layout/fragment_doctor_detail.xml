@@ -4,27 +4,103 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#f7f7f7">
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="진료비"
-        android:textSize="18dp"
-        android:textColor="@color/black"
+        android:orientation="vertical"
+        android:padding="12dp"
         android:background="@color/white"
-        android:padding="8dp"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginBottom="7dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="진료비"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_bottom_line_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="엑스레이"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="33,000원"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_bottom_line_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="진통처치"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11,000원"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border_bottom_line_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="혈액검사"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="55,000원"
+                android:textColor="@color/black"
+                android:layout_marginBottom="7dp"/>
+        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
         android:orientation="vertical"
-        android:padding="8dp"
+        android:padding="12dp"
         android:background="@color/white">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="병원 설명"
-            android:textColor="@color/black" />
+            android:text="안녕하세요.\n 반려동물 건강과 행복에 대해 걱정하시는 보호자분들의 마음과  비례하여
+점점 높아지는 기대치에 부합하는 병원을 만들자는 마음으로 설립되었습니다.\n 의료진은 최신의 진료기법과 많은 수술
+ 경험이 있는 수의사들로 구성되어 있으며 24시간 수의사가 상주하여 환자의 곁은 지키고 있습니다."
+            android:textColor="@color/black"
+            android:lineHeight="30dp"/>
     </LinearLayout>
 
     <LinearLayout
