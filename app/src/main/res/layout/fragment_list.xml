@@ -18,8 +18,8 @@
             android:layout_gravity="center"
             android:text="진료내역"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="25dp"></TextView>
+<!--            android:textStyle="bold" />-->
 
     </androidx.appcompat.widget.Toolbar>
 

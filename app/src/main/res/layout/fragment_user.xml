@@ -18,7 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="85dp"
             android:layout_gravity="center"
+            android:paddingTop="13dp"
             android:layout_weight="1"
+            android:textColor="@color/black"
             android:text="내 정보"
             android:textSize="25dp" />
 
