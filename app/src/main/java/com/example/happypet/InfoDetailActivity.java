@@ -148,7 +148,7 @@ public class InfoDetailActivity extends AppCompatActivity {
                 String comment_insert = "insert into " + "comment"
                         + "(ino, comment, commenter) "
                         + " values "
-                        + " (" + ino + ", '" + comment + "', '" + "aaaa" + "')";
+                        + " (" + ino + ", '" + comment + "', '" + SaveSharedPreference.getUserName(InfoDetailActivity.this) + "')";
 
                 database.execSQL(comment_insert);
 

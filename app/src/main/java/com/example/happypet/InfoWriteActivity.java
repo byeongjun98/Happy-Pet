@@ -181,7 +181,7 @@ public class InfoWriteActivity extends Activity {
                 String write_insert = "insert into " + "information"
                         + "(p_id, title, content, category) "
                         + " values "
-                        + " ('" + "aaa" + "', '" + title + "', '" + content + "', '" + category + "')"
+                        + " ('" + SaveSharedPreference.getUserName(InfoWriteActivity.this) + "', '" + title + "', '" + content + "', '" + category + "')"
                         + "";
 
                 database.execSQL(write_insert);

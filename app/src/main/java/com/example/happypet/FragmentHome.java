@@ -392,6 +392,13 @@ public class FragmentHome extends Fragment {
             database.execSQL(doctor_insert);
         }
 
+        String doctor_insert = "insert into " + "doctor"
+                + "(name, star_rating, subject, hospital, customer_num) "
+                + " values "
+                + " ('" + "김경민" + "', '" + 4.5 +"', " + "'"+ "medicine" + "', '" + "논현동물병원" + "', " + 100 +")";
+
+        database.execSQL(doctor_insert);
+
 //        String insert_sql4 = "insert into " + "information"
 //                + "(p_id, title, content) "
 //                + " values "
